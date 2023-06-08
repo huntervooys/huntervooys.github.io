@@ -23,7 +23,7 @@ email: hunter.vooys@mail.mcgill.ca
 description: >- # this means to ignore newlines until "baseurl:"
   this page is under construction.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "huntervooys.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: hunter_vooys
 github_username:  huntervooys
 
