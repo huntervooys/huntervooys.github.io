@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>hunterr_2024 - 1&nbsp; The Lore</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02_r_and_friends.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "/"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Lore</span></h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">hunterr_2024</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/huntervooys/hunterr_2024" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">R and Friends</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_lore.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Lore</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_r_and_friends.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R and Friends</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_r_101.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R 101</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualization</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mathematical Primer</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_eugenics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Regression and Power</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./0R_references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./0A_resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Getting Help</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">on this page</h2>
+   
+  <ul>
+  <li><a href="#early-19th-century-the-birth-of-programming" id="toc-early-19th-century-the-birth-of-programming" class="nav-link active" data-scroll-target="#early-19th-century-the-birth-of-programming"><span class="header-section-number">1.1</span> Early 19th Century: the birth of programming</a>
+  <ul class="collapse">
+  <li><a href="#jacquards-loom-the-punched-card" id="toc-jacquards-loom-the-punched-card" class="nav-link" data-scroll-target="#jacquards-loom-the-punched-card"><span class="header-section-number">1.1.1</span> Jacquard’s Loom: the punched card</a></li>
+  <li><a href="#babbage-lovelace-and-the-analytical-engine" id="toc-babbage-lovelace-and-the-analytical-engine" class="nav-link" data-scroll-target="#babbage-lovelace-and-the-analytical-engine"><span class="header-section-number">1.1.2</span> Babbage, Lovelace, and the Analytical Engine</a></li>
+  </ul></li>
+  <li><a href="#middle-and-late-19th-century" id="toc-middle-and-late-19th-century" class="nav-link" data-scroll-target="#middle-and-late-19th-century"><span class="header-section-number">1.2</span> Middle and Late 19th century</a>
+  <ul class="collapse">
+  <li><a href="#ish" id="toc-ish" class="nav-link" data-scroll-target="#ish"><span class="header-section-number">1.2.1</span> 1830-1870(ish)</a></li>
+  <li><a href="#late-19th-century" id="toc-late-19th-century" class="nav-link" data-scroll-target="#late-19th-century"><span class="header-section-number">1.2.2</span> Late 19th century</a></li>
+  </ul></li>
+  <li><a href="#sec-early-19th-century-the-advent-of-computing" id="toc-sec-early-19th-century-the-advent-of-computing" class="nav-link" data-scroll-target="#sec-early-19th-century-the-advent-of-computing"><span class="header-section-number">1.3</span> Early 19th century: the advent of computing</a></li>
+  <li><a href="#att-bell-labs-and-s" id="toc-att-bell-labs-and-s" class="nav-link" data-scroll-target="#att-bell-labs-and-s"><span class="header-section-number">1.4</span> AT&amp;T, Bell Labs, and S</a>
+  <ul class="collapse">
+  <li><a href="#s" id="toc-s" class="nav-link" data-scroll-target="#s"><span class="header-section-number">1.4.1</span> S</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/huntervooys/hunterr_2024/edit/main/01_lore.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/huntervooys/hunterr_2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Lore</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p><strong>Learning Objectives</strong>:</p>
+<ul>
+<li><p>discuss R as a language with a history: use knowledge about the history of R (and of scientific computing more generally) to describe what R is, what people “say” in this language, and why this language has the properties and characteristics that it does.</p></li>
+<li><p>R’s friends: Describe R’s relationship to RStudio, RMarkdown, Shiny, Quarto, and Tidyverse; and, describe what each of these tools is and why someone would use them.</p></li>
+</ul>
+</blockquote>
+<section id="early-19th-century-the-birth-of-programming" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="early-19th-century-the-birth-of-programming"><span class="header-section-number">1.1</span> Early 19th Century: the birth of programming</h2>
+<p>The idea of a programmable computer is not difficult to understand. The primary goal is to make a machine that you can use for different tasks, depending on what program you feed to that machine. Programs are written in code, which today is stored as text files on a computer. The programmable machine also lives within the computer, so running the program is as simple as telling the machine part of the computer where the program is located; then, the machine part of the computer tries to read find the and read the program at the specified location, and the (hopefully) program runs.</p>
+<p>Folks in the 19th century did not have access to digital text files, and so they could not write their programs on them. How did they write programs, and which sort of programs did they write? These are the primary questions I hope to address in this very first section?</p>
+<section id="jacquards-loom-the-punched-card" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="jacquards-loom-the-punched-card"><span class="header-section-number">1.1.1</span> Jacquard’s Loom: the punched card</h3>
+<p>One of the first programmable machines was Jacquard’s loom, which Jacquard patented in 1804. Jacquard was a weaver. Jacquard’s loom was a machine that could create a variety of different patterns, depending on which program was put into it?</p>
+<p>So, Jacquard wrote programs to produce beautiful woven fabrics, but more important is how he wrote programs. Jacquard had no text files, so instead he developed a different form of machine input: the punched card. Each line on Jacquard’s punched cards contained information about a single row of the design. The cards could be fed sequentially into the loom to produce a large pattern.</p>
+</section>
+<section id="babbage-lovelace-and-the-analytical-engine" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="babbage-lovelace-and-the-analytical-engine"><span class="header-section-number">1.1.2</span> Babbage, Lovelace, and the Analytical Engine</h3>
+<p>General-purpose digital computers, the sort of computers that can run R, emerged as an idea in the early-to-mid 19th century. Up to that point, computers were either mechanical (mechanical computers are fascinating, by the way) or just humans.</p>
+<p>One of the first to develop a design for a general-purpose computer was Charles Babbage, working in the early part of the 19th century. In the 1830’s he proposed a massively complicated, general-purpose, steam-powered computer, which he called the analytical engine. The computer was only capable of carrying out the four basic operations of arithmetic: addition, subtraction, multiplication, and division; it was designed to take input via punched card, just like Jacquard’s loom.</p>
+<div class="callout callout-style-simple callout-note callout-titled" title="Lady Lovelace">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lady Lovelace
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>During the 1830’s and 1840’s, Lady Ada Lovelace communicated with Charles Babbage (and several others involved in similar work) with the intention to collaborate with him in studying the analytical engine. It was Lady Lovelace who wrote the first substantial computer program, whose purpose was to compute Fibonacci numbers <span class="citation" data-cites="tibeesFirstComputerProgram2020">(<a href="0R_references.html#ref-tibeesFirstComputerProgram2020" role="doc-biblioref">Tibees 2020</a>)</span>. Her program, written in the iconic note G, used only the four simple arithmetic operations.</p>
+<p>Lovelace was interested in discovering the capabilities of the analytical engine. Her program computing Fibonacci numbers was important because it used loops in computation. Lovelace, daughter of the poet Lord Byron, was also interested in non-mathematical applications for the machine. She suggested that a sufficiently mathematical theory of sound could enable to engine to compose complex and scientific symphonies <span class="citation" data-cites="tibeesFirstComputerProgram2020">(<a href="0R_references.html#ref-tibeesFirstComputerProgram2020" role="doc-biblioref">Tibees 2020</a>)</span>. Isn’t that beautiful!</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="middle-and-late-19th-century" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="middle-and-late-19th-century"><span class="header-section-number">1.2</span> Middle and Late 19th century</h2>
+<section id="ish" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="ish"><span class="header-section-number">1.2.1</span> 1830-1870(ish)</h3>
+<p>The middle of the 19th century was a period of massive global shifts. Liberation from enslavement was spreading across the globe after the Haitian revolution left white men horrified at the peculiar institution, which was also losing economic utility (see <em>Capitalism and Slavery</em> by Eric Williams).</p>
+<p>Also within that 40 year period was:</p>
+<ul>
+<li><p>abolition (as a matter of law, anyways): British Empire (1834), French Empire (1848), Russian Empire (1861), Dutch Empire (and Dutch East India Company; 1863-73), American Empire (1865), Portuguese Empire (1869)</p></li>
+<li><p>Samuel Colt’s invention of a revolver that can be mass-produced (1836?)</p></li>
+<li><p>the development of the telegraph (1830s)</p></li>
+<li><p>the trail of tears (starting 1836)</p></li>
+<li><p>the revolutions of 1848 and the publication of the communist manifesto</p></li>
+<li><p>the first woman’s rights convention in the U.S. (Seneca Falls Convention, 1848)</p></li>
+<li><p>the discovery of the Bessemer Process which enables the mass-production of steel, paving the way for emerging steel tycoons (1855)</p></li>
+<li><p>Darwin published On the Origin of Species (1859)</p></li>
+<li><p>Gatling’s invention of the machine gun (1861)</p></li>
+<li><p>Maxwell publishes his equations, proposing an incredibly successful theory of physics that understands electricity, magnetism, and light as essentially the same thing (1861)</p></li>
+<li><p>the construction and openning of the Suez Canal (1860’s)</p></li>
+<li><p>Mendel’s publication of his laws of genetic inheritance (1865)</p></li>
+<li><p>the discovery of the cell and subsequent elaboration of cell theory (1865 and after)</p></li>
+<li><p>Nobel’s invention of dynamite (1867)</p></li>
+<li><p>Marx’ publication of the first volume of capital (1867)</p></li>
+<li><p>the completion of the transcontinental railroad (U.S., 1869)</p></li>
+<li><p>Mendeleev’s publication of the first periodic table (1869)</p></li>
+</ul>
+<p>In this revisionist history of the computer (and ultimately of R), this period in history marked a transformation of power. The structure and organization of society was changing along with the flow of people, ideas, and commerce. Western, liberal democracies had to develop new technologies of population control in order to prevent all of these liberal changes from challenging their position of authority and power.</p>
+</section>
+<section id="late-19th-century" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="late-19th-century"><span class="header-section-number">1.2.2</span> Late 19th century</h3>
+<p>With the relative liberation of black bodies (and other bodies, as well) came a scientific imperative. Power continued to demand that these bodies be inferior, but evidence of inferiority was no longer to come from the conditions and dimensions of the body. Nay, the newly-available technologies of genetic inheritance and natural selection allowed a regime of a new flavor to take hold, one that cited hard science to support and justify the inequities in society. Inferiority was moving through the skin, into the body, and - importantly - into the mind.</p>
+<p>Wilhelm Wundt opened the first psychology lab, and William James delivered the first psychology course and textbook. Galton, who was studying intelligence, popularized the idea of the median <span class="citation" data-cites="bakkerHistoricalPhenomenologyMean2006">(<a href="0R_references.html#ref-bakkerHistoricalPhenomenologyMean2006" role="doc-biblioref">Bakker and Gravemeijer 2006</a>)</span>. Psychology and with it psychological statistics, was beginning to take shape to meet the new demands of the state: a theory and a technology that will find permanent, internal traits upon which to stratify society into haves and have-nots. The story of the emergence of psychological statistics is incomplete without mention of eugenics. The tools being developed were not neutral and scientific, but overtly political, aimed at achieving the goals of the state.</p>
+<p>Also in the late 19th century was what Foucault called the implantation of perversions <span class="citation" data-cites="foucaultHistorySexuality1978">(<a href="0R_references.html#ref-foucaultHistorySexuality1978" role="doc-biblioref">Foucault 1978</a>)</span> - the creation of new symbolic threats to the body and to society as a whole. This operated through the invention of new characters that continue to exist within society today.</p>
+<p>Firstly, there was the medical specification of the homosexual <span class="citation" data-cites="townsendMedicalizationHomosexuality2011">(<a href="0R_references.html#ref-townsendMedicalizationHomosexuality2011" role="doc-biblioref">Townsend 2011</a>)</span>. This began in 1864 with the work of Karl-Heinrich Ulrichs, who was gay himself. He specified men as either urnings or dionings. Urnings and Dionings are both male-bodied creatures, but the urning experiences the desires and character of a female <span class="citation" data-cites="townsendMedicalizationHomosexuality2011">(<a href="0R_references.html#ref-townsendMedicalizationHomosexuality2011" role="doc-biblioref">Townsend 2011</a>)</span>. The dioning, by contrast, is normal. Discourse about the urning (renamed to the invert, and then to the homosexual) continued well into the 20th century, and the sissy (the archetype the invert represents) is, obviously, still with us.</p>
+<p>Also within this time period, was the medical specification of the hysteric woman, which was initially the perogative of Jean-Martin Charcot.</p>
+<p>I’ll mention just one more character that was invented in the later 19th century. For all of American history to this point, immigration law was about the process of naturalization - immigrants becoming citizens. From the beginning of the union, only white men of “good moral character” were allowed to become American citizens (Naturalization act of 1790?). There was little effort to actually prevent bodies from entering the country.</p>
+<p>Until 1875. With the passage fo the Page Act of 1875, the United States declared its intention to keep undesirable bodies out of the country for the first time. Shortly thereafter, the “illegal alien” was invented as a result of the Chinese Exclusion Act of 1882, which is the only American immigration law I am aware of that names a specific national group in its title.</p>
+<p>All this to say that the nature and enforcement of undesirability were in massive flux in the late 19th century. The foreign element was moving within: the enslaved African could become a citizen and could vote, the invert or the hysteric could be hiding within anyone, and the state took up the power to deport bodies that did not belong. No longer was the anthropologist writing about the inferiority of foreign peoples (although to be clear, they absolutely were still doing that); the pschiatrist was now writing about our own inferiority.</p>
+<p>I consider the birth of statistics to be in this time period, which does not have pleasant implications for statistics as a field. There is a lot more to be said about the advent of statistics, and how statistics is designed to serve power (i.e., fulfill the demands of the state). However, I’m going to leave all of that unsaid and refocus on computation in general, and statistical computing in particular.</p>
+<p>The late 19th century was also, notoriously, the era of massive trusts in the United States. These monstrous, monopolistic companies exploited both the consumer and the worker, but the United States did not yet have a legal mechanism for breaking them up. The most important monopoly for our purposes: the one that is most influential is the development of S and then R is the AT&amp;T monopoly.</p>
+<p>Another monopoly was also forming. Using Jacquard’s punched cards, an American man designed and patented a system to read punched cards. In 1890, this punched card system was used to complete the census, resulting in the 1890 census being completed two years quicker than the 1880 one. The company that developed this technology would go on to become IBM, which enjoyed monopoly status in the computing industry for several decades.</p>
+</section>
+</section>
+<section id="sec-early-19th-century-the-advent-of-computing" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-early-19th-century-the-advent-of-computing"><span class="header-section-number">1.3</span> Early 19th century: the advent of computing</h2>
+<p>Near the end of the 19th century, a mathematician named David Hilbert decided that mathematics needed to be formalized. Up to that point, it had developed as myriad sub-disciplines that failed to cohere into a single, interconnected web of mathematics. Hilbert believed that it should, and his goal was to formalize this system. He believed that such a system (of mathematical axioms) needed to have three properties:</p>
+<ol type="1">
+<li>to be consistent: it should not be possible to derive that a statement is both true and false</li>
+<li>to be complete: it should be possible to derive the truth of every true statement (or the falsity of its negation)</li>
+<li>to be decidable: there must be an algorithm that can identify all and only true statements in a finite number of steps.</li>
+</ol>
+<p>(The excitement about formalizing affected Hilbert, but by no means was he the first or the only to be caught up in this mess. Notoriously, Whitehead and Russel got spun up enough to publish a 126-page long proof that <span class="math inline">\(1+1=2\)</span>. I’m mostly attributing these three demands to Hilbert for sanity’s sake because I cannot stand to write out the sordid details. These three “properties” as I call them, are really inspired very loosely on any specific, cite-able Hilbert publication. He did publish a list of <a href="https://en.wikipedia.org/wiki/Hilbert%27s_problems">23 questions</a>, which refer to the properties I mention here, but understand this as a drastically over-simplified view of the mathematical debates unfolding at the time.)</p>
+<p>Mathematics was not the only field to be heating up. There was growing speculation in physics that matter may not be as continuous as was previously assumed. In 1900, Max Planck published the first quantum theory in physics, which was aimed at modelling thermal radiation. Shortly thereafter, Albert Einstein published another quantum theory, this time aimed at modeling the the photoelectric effect. Both of these models used quantum stuff (i.e., minimal, discrete units of energy, creating measurements of energy that are always a multiple of the quantum unit), but the authors did not actually believe the world was quantum. Famously, Einstein’s theories of relativity both rely on space-time being continuous. They merely believed quantized math was the best way to explain non-quantum physical phenomena.</p>
+<p>Neils Bohr went the whole way, creating his model of the atom, with distinct, orbital electron shells. In the 1920’s quantum mechanics, as we know it today, came into existence. It did not make Einstein happy. Einstein wanted a deterministic world, where each cause has an specific, reliable effect. Quantum mechanics is not a deterministic theory of physics, but a probabilistic one. I take this diversion into the physical sciences not only to stress that this is a transition period within the physical sciences, but to temper my claim from the previous section. The “demands of power” did no less to supercharge the development of statistics and probability than did rapid changes in the way we understand and model the physical world.</p>
+<p>During my quantum mechanical tangent, Gödel has proven that achieving the second property of Hilbert’s idealistic system is unlikely. In fact, Gödel establishes that it is logically impossible that any formal mathematical system could be complete, as defined above.</p>
+<p>To answer the question about whether mathematics is decidable, a new technology is needed. Before a mathematician can make formal claims about the capabilities or limitations of algorithms in general (as Hilbert demanded), she must first provide a rigorous definition of an algorithm. Two mathematicians took up this task, Alonzo Church who developed the lambda calculus, and Alan Turing who developed the Turing machine. Both men reached the same conclusion: mathematics cannot be decidable. It is logically impossible to make an algorithm (a Turing machine) that can identify all and only true statements <span class="citation" data-cites="turingComputableNumbersApplication1936">(<a href="0R_references.html#ref-turingComputableNumbersApplication1936" role="doc-biblioref">Turing 1936</a>)</span>. There are, as it turns out, hard limits on the types of problems algorithms are able to solve (at least in a finite number of steps).</p>
+<p>Thus, Turing half accidentally created the field of computer science while trying to answer a question about the foundations of mathematics. This is also an opportune time to introduce the term <strong>Turing-complete</strong> which refers to anything (model of computation, programming language, a book of instructions used by a human computer) that can simulate the a Turing machine. Any Turing-complete system is essentially equivalent to the original Turing machine described in <span class="citation" data-cites="turingComputableNumbersApplication1936">(<a href="0R_references.html#ref-turingComputableNumbersApplication1936" role="doc-biblioref">Turing 1936</a>)</span>. The analytical engine is (theoretically, of course, it never got built) Turing-complete; Jacquard’s loom, by contrast, is not. Modern programming languages are, for the most part, Turing complete, meaning that any function you write in a modern programming language could be performed on the OG Turing machine from <span class="citation" data-cites="turingComputableNumbersApplication1936">(<a href="0R_references.html#ref-turingComputableNumbersApplication1936" role="doc-biblioref">Turing 1936</a>)</span>.</p>
+<p>The first electric, digital computer was not fully constructed until 1945. It was built by and for the U.S. military, who named the machine <a href="https://en.wikipedia.org/wiki/ENIAC">ENIAC</a>. Thus, the first computations done on an electric, digital computer were intended to speed up the process of human and earthly destruction. ENIAC was a bunch of coordinated units that ran according to the placement of wires on the machine <span class="citation" data-cites="shustekProgrammingENIACExample2016">(<a href="0R_references.html#ref-shustekProgrammingENIACExample2016" role="doc-biblioref">Shustek 2016</a>)</span>. The machine took IBM punched cards as input (remember the punched card monopolist from the end of the 19th century?).</p>
+<p>Initially, the wires on ENIAC had to be moved for each new problem <span class="citation" data-cites="shustekProgrammingENIACExample2016">(<a href="0R_references.html#ref-shustekProgrammingENIACExample2016" role="doc-biblioref">Shustek 2016</a>)</span>. The process of re-configuring the machine for each new problem was tedious, but it was possible, and so ENIAC was Turing-complete. However, having to physically move wires prevented the machine from achieving the utility of a modern programmable computer.</p>
+<p>This machine was very quickly modified in a way that dramatically changed its function. Instead of having to move wires, and then feed the machine (punched card) instructions based on the position of those wires, it would be much faster permanently code instructions (functions) into the machine. Then, the input of the machine could describe the sequence of functions. You could achieve looping by instructing ENIAC to perform a function repeatedly and conditional (if-statement) execution by instructing ENIAC to skip functions in the sequence.</p>
+<p>This is the idea behind modern programming languages. Instructions for the computer, written in the computer’s language (ENIAC’s language was wires, the one we’ll soon focus on is R) are stored within the machine. “Programming” the machine involves telling it which instructions to perform and in which order. In 1948, the first ENIAC “program” ran under this new computer architecture was a <strong>Monte Carlo simulation</strong> of neutron decay during nuclear fission <span class="citation" data-cites="shustekProgrammingENIACExample2016">(<a href="0R_references.html#ref-shustekProgrammingENIACExample2016" role="doc-biblioref">Shustek 2016</a>)</span>.</p>
+</section>
+<section id="att-bell-labs-and-s" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="att-bell-labs-and-s"><span class="header-section-number">1.4</span> AT&amp;T, Bell Labs, and S</h2>
+<p>Monopolies suck, and AT&amp;T did as well. Throughout the beginnning of the century, it gradually became clear that the benefits of a monopolist teleohpne provider were not going to materialize. In 1949, the U.S. Department of Justice sued AT&amp;T for violating the anti-trust act, and the resulting 1956 consent decree prohibited AT&amp;T from entering the computer business <span class="citation" data-cites="changCaseStudyDivestiture">(<a href="0R_references.html#ref-changCaseStudyDivestiture" role="doc-biblioref">Chang, Hen, and Kan n.d.</a>)</span>.</p>
+<p>This consent decree did not prevent the further degradation of AT&amp;T’s service, nor did it prevent future anti-trust lawsuits. Throughout the 60’s and early 70’s, the U.S. government dogged AT&amp;T with recurrent anti-trust lawsuits. In 1974, the Department of Justice began their final lawsuit against a monopoly AT&amp;T. Over the course of the next decade, the government proved that AT&amp;T was leveraging its monopoly power to predatory ends, annihilating potential competitors and pricing services far beyond the cost to provide them. This lawsuit ended in 1982 with the dissolution of AT&amp;T into 7 Regional Bell Operating Companies <span class="citation" data-cites="changCaseStudyDivestiture">(<a href="0R_references.html#ref-changCaseStudyDivestiture" role="doc-biblioref">Chang, Hen, and Kan n.d.</a>)</span>.</p>
+<p>Bell Labs was probably the most important laboratory within AT&amp;T. During the early 70’s, the researchers at the statistics research department within Bell Labs was using the programming language FORTRAN. FORTRAN is a general purpose, compiled programming language, developed by IBM (the punched card guys).</p>
+<p>(This isn’t super relevant, but I think it’s fun. Before 1968, computational statisticians had been using a algorithm called RANDU, which was a FORTRAN function that generated random numbers. In 1968, a mathematician proved that the allegedly random numbers actually all had to lie on a series of parallel hyper-planes, and we thus not actually random. wtf is a series of parallel hyper-planes? See below)</p>
+<div class="cell" data-lst-caption="a statistical embarassment from 1968">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01_lore_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>FORTRAN, the name, stands for “formula translation,” and it was primarily used for scientific computing, like computing weather models or doing computational physics - things that have to do with numbers, essentially. It is still used in these fields to some extent, although it is less popular for scientific computing than other, more recent programming languages, like R. FORTRAN is, computationally speaking, incredibly efficient, mostly by natively supporting parallel computation. For this reason, FORTRAN is still used to benchmark supercomputers. You can learn more about FORTRAN on <a href="https://fortran-lang.org/">its website</a>.</p>
+<p>In any case, in the 1970’s, the statistics research department at Bell Labs found FORTRAN to be somewhat insufficient, and they set out to develop a new language that would more fully suit their needs <span class="citation" data-cites="beckerBriefHistory1994">(<a href="0R_references.html#ref-beckerBriefHistory1994" role="doc-biblioref">Becker 1994</a>)</span>.</p>
+<section id="s" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="s"><span class="header-section-number">1.4.1</span> S</h3>
+<p>S is a statistical computing language that was developed first at Bell Laboratories in the mid 1970s. At the time, statistics was undergoing a change. Previously, statistics had been developing as a set of methods - essentially algorithms that prescriptively described how to complete a statistical analysis from beginning to end. In the early 70’s, John Tukey was working at Bell Labs and at Princeton, and he was making a lot of noise about the problems with statistics. He popularized a different approach to statistics, establishing something of a binary between data analysis and statistics, just as I did between machine learning and statistics (in <a href="index.html#sec-tools" class="quarto-xref"><span>Section 1.2</span></a>; <span class="citation" data-cites="tukeyDataAnalysisComputation1972">Tukey (<a href="0R_references.html#ref-tukeyDataAnalysisComputation1972" role="doc-biblioref">1972</a>)</span>).</p>
+<p>The statistics research department was beginning to demand a tool that aligned with Tukey’s approach. FORTRAN, developed more than a decade before that demand was created at and by Bell Labs, did not measure up to the task. Instead, they decided to develop a new language, which they named S. Initially, there was a large focus on being able to import FORTRAN functions into S, so that there could be a smooth transition from FORTRAN to S within Bell Labs.</p>
+<p>S was built from the ground up to include graphics capabilities, and a structure that enabled and encouraged exploratory data analysis. The basic data structure in S is a vector of like-elements, which were used to make matrices and time-series; S also included lists (key-value maps) and the <code>$</code> operator, which could be used to retrieve specific components of larger data structures <span class="citation" data-cites="beckerBriefHistory1994">(<a href="0R_references.html#ref-beckerBriefHistory1994" role="doc-biblioref">Becker 1994</a>)</span>. It also included all of the arithmetic operators that you need in a desk calculator, making it useful for that purpose, as well.</p>
+<p>In 1980, S was distributed outside of Bell Labs for the first time. Initially, it was distributed for a nominal fee and for educational use only, but by 1981 it was widely available <span class="citation" data-cites="beckerBriefHistory1994">(<a href="0R_references.html#ref-beckerBriefHistory1994" role="doc-biblioref">Becker 1994</a>)</span>. After it began to be distributed, the developers added explicit looping (i.e., <code>for</code> loops), as well as the <code>apply</code> function, which could be used to loop over a vector while applying a function <span class="citation" data-cites="beckerBriefHistory1994">(<a href="0R_references.html#ref-beckerBriefHistory1994" role="doc-biblioref">Becker 1994</a>)</span>. The developers also introduced the “category”, which is now called the <code>factor</code> in R. Categories are vectors of data. They merge numerical and string data types - each entry in the vector is assigned a category label (so that you can read it), as well as a underlying integer (so that you can do math with categories).</p>
+<p>Although S was developed initially by statisticians, it clearly had utility as a data manipulation, graphics, and exploratory data analysis tool. In 1988, the developers released the “New S,” renaming the software after some significant changes. The most significant feature of New S was the inclusion of <strong>first class functions</strong>, which are functions that you can assign to a name and and then refer to by that name. Functions are first class in that they are S objects, just like any vector or matrix. For the first time, S had <strong>depreciated</strong> functions, which R also has. Depreciated functions are functions for which there is a better alternative. They are generally still included in R and S distributions (so old code that uses depreciated functions can still run), but it’s best to avoid using them (and to use the better alternatives instead). By 1988, many of the FORTRAN functions from the initial development of S were rewritten in C, which is a general purpose programming languages on which New S is built <span class="citation" data-cites="beckerBriefHistory1994">(<a href="0R_references.html#ref-beckerBriefHistory1994" role="doc-biblioref">Becker 1994</a>)</span>.</p>
+<p>In 1991, the S development team expanded, and there was a focus on adding statistical software to the S language. Although S was developed by statisticians who intended to use it for statistics, the statistics are not inherent in S: “S is a computational language and environment for data analysis and graphics” <span class="citation" data-cites="beckerBriefHistory1994">(<a href="0R_references.html#ref-beckerBriefHistory1994" role="doc-biblioref">Becker 1994</a>)</span>. As such, the developers added the <code>formula</code> class, which could be used to specify statistical models. The formula is marked by the <code>~</code> operator, with the dependent variable on the left and the independent variable(s) on the right (e.g., <code>y ~ x + w + x*w</code>).</p>
+<p>Also in the 1991 release was the <code>data.frame</code>. Matrices are like vectors: they can only have one type of data. If you have a matrix that has even one number in it, then the entire matrix must be numeric, even if you want to use it to represent string data (like names and job titles) or categorical data <span class="citation" data-cites="beckerBriefHistory1994">(<a href="0R_references.html#ref-beckerBriefHistory1994" role="doc-biblioref">Becker 1994</a>)</span>. So, a matrix is a combination of multiple vectors, all of the same type. A <code>data.frame</code>, by contrast, is a combination of vectors of <em>any</em> type. You can have a string vector (column) in the data frame representing job title, as well as a numeric vector representing income. As with matrices, you can use the <code>$</code> operator to pick a vector out of the data frame (e.g., <code>data$income</code> picks out the income vector in the data frame called <code>data</code>).</p>
+<p>It’s not really possible for a programming language to die. As we have seen with FORTRAN and S, new programming languages often use code from their older counterparts, especially at the beginning. Even though I can no longer find S on the internet and run it on my computer, a very large number of S functions continue to exist in R.</p>
+<p>I am able to find relatively scant documentation about this final period in the history of S, so the rest of this section is at least somewhat speculative (except claims that are cited, of course).</p>
+<p>What is the need for R if S exists? Well, well, well. Let’s talk about corporate fuckery, which both killed S and prevented it from dying. I have been making a much bigger deal over anti-trust law than the vast majority of those who introduce R to their students. To this point, as far as AT&amp;T and Bell Labs are concerned, I have presented a world in which they are legally prohibited from selling computers (and presumably, computer software) as a result of the Consent Decree from 1956.</p>
+<p>Up to this point, no one was making money off of S. Although Bell was initially charging folks a nominal fee to use the software <span class="citation" data-cites="beckerBriefHistory1994">(<a href="0R_references.html#ref-beckerBriefHistory1994" role="doc-biblioref">Becker 1994</a>)</span>, this practice ended quickly, meaning that the software was being distributed for free. As a result of the anti-trust, Bell Labs was not going to monetize this technology. Instead, one of their former employees had to do it.</p>
+<p>In the 70s and 80s, the graphical user interface (GUI) was being born. This emerging technology came with a new generation of capitalists who had not been subject to extensive anti-trust, in which former trade union president Ronald Reagan did not believe - the capitalists who bring us Microsoft and Apple, who own outright the operating systems of about 85% of the worlds’ computers (and many phones and other devices, as well).</p>
+<p>S wasn’t fated to become Windows; it was fated to become S-PLUS. S-PLUS is/was a statistical computing software with a graphical user interface. It was developed by a company owned by a former Bell Labs employee and University of Washington professor, <a href="https://faculty.washington.edu/martinrd/">R Douglas Martin</a>. His work is primarily in econometrics, and he has extensively published about investment risks. Because of this, and because S-PLUS was and is mostly used by economists, a cynic might call it an application to be used for those who are unwilling or unable to learn how to code (similar in character to Microsoft’s SPSS). S-PLUS started circulating (for a fee) in about the year 1987, and it did include features that S did not (like generalized linear models).</p>
+<p>Let me just quickly recap, so I can make sure everyone is oriented in time - I’m discussing a lot of events that overlap and are not all well documented. In 1980, S was released to the public; in 1988, S had a significant update, becoming “New S”; around 1987, a former employee of Bell Labs developed S-PLUS; in 1991, S had an update that focused on statistics.</p>
+<p>In 1991, two statisticians quietly began work on the project (R) that would more-or-less kill S and S-PLUS.</p>
+<p>In 1993, S and S-PLUS were reunited when Bell Labs sold S to the company that had developed S-PLUS. That company, in turn, immediately merged with a company called MathSoft. S-PLUS was only available on windows, and its relationship with Microsoft strengthened when features were added to connect S-PLUS to Excel and to SPSS.</p>
+<p>Part of the company (MathSoft) was sold, it got renamed (to Insightful), the exclusive license to distribute S turned into AT&amp;T (i.e., Lucent, one of the companies that remained after AT&amp;T) selling S so that it became the property of Insightful. Then Insightful got bought by a company called TIBCO, and then…</p>
+<p>I think you get the general idea. S and S-PLUS got bought, and sold, and licensed, and merged, and acquired to the point that it no longer really exists in any meaningful, public way. But by the 2000s, that didn’t matter.</p>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-bakkerHistoricalPhenomenologyMean2006" class="csl-entry" role="listitem">
+Bakker, Arthur, and Koeno P. E. Gravemeijer. 2006. <span>“An <span>Historical Phenomenology</span> of <span>Mean</span> and <span>Median</span>.”</span> <em>Educational Studies in Mathematics</em> 62 (2): 149–68. <a href="https://www.jstor.org/stable/25472093">https://www.jstor.org/stable/25472093</a>.
+</div>
+<div id="ref-beckerBriefHistory1994" class="csl-entry" role="listitem">
+Becker, Richard A. 1994. <span>“A <span>Brief History</span> of <span>S</span>.”</span> In <em>Computational <span>Statistics</span></em>, edited by Peter Dirschedl and Rüdiger Ostermann, 81–110. Heidelberg: Physica-Verlag HD. <a href="https://doi.org/10.1007/978-3-642-57991-2_6">https://doi.org/10.1007/978-3-642-57991-2_6</a>.
+</div>
+<div id="ref-changCaseStudyDivestiture" class="csl-entry" role="listitem">
+Chang, Grace, Elaine Hen, and Lili Kan. n.d. <span>“Case <span>Study</span> 1: <span>AT</span>&amp;<span>T Divestiture</span>.”</span> Accessed May 6, 2024. <a href="https://inst.eecs.berkeley.edu/~eecsba1/sp97/reports/eecsba1e/final_proj/case1.html">https://inst.eecs.berkeley.edu/~eecsba1/sp97/reports/eecsba1e/final_proj/case1.html</a>.
+</div>
+<div id="ref-foucaultHistorySexuality1978" class="csl-entry" role="listitem">
+Foucault, Michel. 1978. <em>The <span>History</span> of <span>Sexuality</span></em>. Vol. 1. 3 vols. Random House.
+</div>
+<div id="ref-shustekProgrammingENIACExample2016" class="csl-entry" role="listitem">
+Shustek, Leonard J. 2016. <span>“Programming the <span>ENIAC</span>: <span>An Example</span> of <span>Why Computer History</span> Is <span>Hard</span>.”</span> May 18, 2016. <a href="https://computerhistory.org/blog/programming-the-eniac-an-example-of-why-computer-history-is-hard/">https://computerhistory.org/blog/programming-the-eniac-an-example-of-why-computer-history-is-hard/</a>.
+</div>
+<div id="ref-tibeesFirstComputerProgram2020" class="csl-entry" role="listitem">
+Tibees, dir. 2020. <em>The <span>First Computer Program</span></em>. <a href="https://www.youtube.com/watch?v=_JVwyW4zxQ4">https://www.youtube.com/watch?v=_JVwyW4zxQ4</a>.
+</div>
+<div id="ref-townsendMedicalizationHomosexuality2011" class="csl-entry" role="listitem">
+Townsend, Kristin. 2011. <span>“The <span>Medicalization</span> of <span>‘<span>Homosexuality</span>’</span>.”</span> <em>Honors Capstone Projects - All</em>, May. <a href="https://surface.syr.edu/honors_capstone/292">https://surface.syr.edu/honors_capstone/292</a>.
+</div>
+<div id="ref-tukeyDataAnalysisComputation1972" class="csl-entry" role="listitem">
+Tukey, John W. 1972. <span>“Data Analysis, Computation and Mathematics.”</span> <em>Quarterly of Applied Mathematics</em> 30 (1): 51–65. <a href="https://doi.org/10.1090/qam/99740">https://doi.org/10.1090/qam/99740</a>.
+</div>
+<div id="ref-turingComputableNumbersApplication1936" class="csl-entry" role="listitem">
+Turing, Alan. 1936. <span>“On Computable Numbers, with an Application to the <span>Entscheidungsproblem</span>.”</span> <em>Journal of Math</em> 58 (5): 345–63. <a href="https://www.wolframscience.com/prizes/tm23/images/Turing.pdf">https://www.wolframscience.com/prizes/tm23/images/Turing.pdf</a>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02_r_and_friends.html" class="pagination-link" aria-label="R and Friends">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R and Friends</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu"># The Lore</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="at">&gt; **Learning Objectives**:</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="at">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="at">&gt; -   discuss R as a language with a history: use knowledge about the history of R (and of scientific computing more generally) to describe what R is, what people "say" in this language, and why this language has the properties and characteristics that it does.</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="at">&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="at">&gt; -   R's friends: Describe R's relationship to RStudio, RMarkdown, Shiny, Quarto, and Tidyverse; and, describe what each of these tools is and why someone would use them.</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">## Early 19th Century: the birth of programming</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a>The idea of a programmable computer is not difficult to understand. The primary goal is to make a machine that you can use for different tasks, depending on what program you feed to that machine. Programs are written in code, which today is stored as text files on a computer. The programmable machine also lives within the computer, so running the program is as simple as telling the machine part of the computer where the program is located; then, the machine part of the computer tries to read find the and read the program at the specified location, and the (hopefully) program runs.</span>
+<span id="cb1-12"><a href="#cb1-12"></a></span>
+<span id="cb1-13"><a href="#cb1-13"></a>Folks in the 19th century did not have access to digital text files, and so they could not write their programs on them. How did they write programs, and which sort of programs did they write? These are the primary questions I hope to address in this very first section?</span>
+<span id="cb1-14"><a href="#cb1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="fu">### Jacquard's Loom: the punched card</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a>One of the first programmable machines was Jacquard's loom, which Jacquard patented in 1804. Jacquard was a weaver. Jacquard's loom was a machine that could create a variety of different patterns, depending on which program was put into it?</span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a>So, Jacquard wrote programs to produce beautiful woven fabrics, but more important is how he wrote programs. Jacquard had no text files, so instead he developed a different form of machine input: the punched card. Each line on Jacquard's punched cards contained information about a single row of the design. The cards could be fed sequentially into the loom to produce a large pattern.</span>
+<span id="cb1-20"><a href="#cb1-20"></a></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="fu">### Babbage, Lovelace, and the Analytical Engine</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a></span>
+<span id="cb1-23"><a href="#cb1-23"></a>General-purpose digital computers, the sort of computers that can run R, emerged as an idea in the early-to-mid 19th century. Up to that point, computers were either mechanical (mechanical computers are fascinating, by the way) or just humans.</span>
+<span id="cb1-24"><a href="#cb1-24"></a></span>
+<span id="cb1-25"><a href="#cb1-25"></a>One of the first to develop a design for a general-purpose computer was Charles Babbage, working in the early part of the 19th century. In the 1830's he proposed a massively complicated, general-purpose, steam-powered computer, which he called the analytical engine. The computer was only capable of carrying out the four basic operations of arithmetic: addition, subtraction, multiplication, and division; it was designed to take input via punched card, just like Jacquard's loom.</span>
+<span id="cb1-26"><a href="#cb1-26"></a></span>
+<span id="cb1-27"><a href="#cb1-27"></a>::: {.callout-note title="Lady Lovelace" collapse="true"}</span>
+<span id="cb1-28"><a href="#cb1-28"></a>During the 1830's and 1840's, Lady Ada Lovelace communicated with Charles Babbage (and several others involved in similar work) with the intention to collaborate with him in studying the analytical engine. It was Lady Lovelace who wrote the first substantial computer program, whose purpose was to compute Fibonacci numbers <span class="co">[</span><span class="ot">@tibeesFirstComputerProgram2020</span><span class="co">]</span>. Her program, written in the iconic note G, used only the four simple arithmetic operations.</span>
+<span id="cb1-29"><a href="#cb1-29"></a></span>
+<span id="cb1-30"><a href="#cb1-30"></a>Lovelace was interested in discovering the capabilities of the analytical engine. Her program computing Fibonacci numbers was important because it used loops in computation. Lovelace, daughter of the poet Lord Byron, was also interested in non-mathematical applications for the machine. She suggested that a sufficiently mathematical theory of sound could enable to engine to compose complex and scientific symphonies <span class="co">[</span><span class="ot">@tibeesFirstComputerProgram2020</span><span class="co">]</span>. Isn't that beautiful!</span>
+<span id="cb1-31"><a href="#cb1-31"></a>:::</span>
+<span id="cb1-32"><a href="#cb1-32"></a></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="fu">## Middle and Late 19th century</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a></span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="fu">### 1830-1870(ish)</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a></span>
+<span id="cb1-37"><a href="#cb1-37"></a>The middle of the 19th century was a period of massive global shifts. Liberation from enslavement was spreading across the globe after the Haitian revolution left white men horrified at the peculiar institution, which was also losing economic utility (see *Capitalism and Slavery* by Eric Williams).</span>
+<span id="cb1-38"><a href="#cb1-38"></a></span>
+<span id="cb1-39"><a href="#cb1-39"></a>Also within that 40 year period was:</span>
+<span id="cb1-40"><a href="#cb1-40"></a></span>
+<span id="cb1-41"><a href="#cb1-41"></a><span class="ss">-   </span>abolition (as a matter of law, anyways): British Empire (1834), French Empire (1848), Russian Empire (1861), Dutch Empire (and Dutch East India Company; 1863-73), American Empire (1865), Portuguese Empire (1869)</span>
+<span id="cb1-42"><a href="#cb1-42"></a></span>
+<span id="cb1-43"><a href="#cb1-43"></a><span class="ss">-   </span>Samuel Colt's invention of a revolver that can be mass-produced (1836?)</span>
+<span id="cb1-44"><a href="#cb1-44"></a></span>
+<span id="cb1-45"><a href="#cb1-45"></a><span class="ss">-   </span>the development of the telegraph (1830s)</span>
+<span id="cb1-46"><a href="#cb1-46"></a></span>
+<span id="cb1-47"><a href="#cb1-47"></a><span class="ss">-   </span>the trail of tears (starting 1836)</span>
+<span id="cb1-48"><a href="#cb1-48"></a></span>
+<span id="cb1-49"><a href="#cb1-49"></a><span class="ss">-   </span>the revolutions of 1848 and the publication of the communist manifesto</span>
+<span id="cb1-50"><a href="#cb1-50"></a></span>
+<span id="cb1-51"><a href="#cb1-51"></a><span class="ss">-   </span>the first woman's rights convention in the U.S. (Seneca Falls Convention, 1848)</span>
+<span id="cb1-52"><a href="#cb1-52"></a></span>
+<span id="cb1-53"><a href="#cb1-53"></a><span class="ss">-   </span>the discovery of the Bessemer Process which enables the mass-production of steel, paving the way for emerging steel tycoons (1855)</span>
+<span id="cb1-54"><a href="#cb1-54"></a></span>
+<span id="cb1-55"><a href="#cb1-55"></a><span class="ss">-   </span>Darwin published On the Origin of Species (1859)</span>
+<span id="cb1-56"><a href="#cb1-56"></a></span>
+<span id="cb1-57"><a href="#cb1-57"></a><span class="ss">-   </span>Gatling's invention of the machine gun (1861)</span>
+<span id="cb1-58"><a href="#cb1-58"></a></span>
+<span id="cb1-59"><a href="#cb1-59"></a><span class="ss">-   </span>Maxwell publishes his equations, proposing an incredibly successful theory of physics that understands electricity, magnetism, and light as essentially the same thing (1861)</span>
+<span id="cb1-60"><a href="#cb1-60"></a></span>
+<span id="cb1-61"><a href="#cb1-61"></a><span class="ss">-   </span>the construction and openning of the Suez Canal (1860's)</span>
+<span id="cb1-62"><a href="#cb1-62"></a></span>
+<span id="cb1-63"><a href="#cb1-63"></a><span class="ss">-   </span>Mendel's publication of his laws of genetic inheritance (1865)</span>
+<span id="cb1-64"><a href="#cb1-64"></a></span>
+<span id="cb1-65"><a href="#cb1-65"></a><span class="ss">-   </span>the discovery of the cell and subsequent elaboration of cell theory (1865 and after)</span>
+<span id="cb1-66"><a href="#cb1-66"></a></span>
+<span id="cb1-67"><a href="#cb1-67"></a><span class="ss">-   </span>Nobel's invention of dynamite (1867)</span>
+<span id="cb1-68"><a href="#cb1-68"></a></span>
+<span id="cb1-69"><a href="#cb1-69"></a><span class="ss">-   </span>Marx' publication of the first volume of capital (1867)</span>
+<span id="cb1-70"><a href="#cb1-70"></a></span>
+<span id="cb1-71"><a href="#cb1-71"></a><span class="ss">-   </span>the completion of the transcontinental railroad (U.S., 1869)</span>
+<span id="cb1-72"><a href="#cb1-72"></a></span>
+<span id="cb1-73"><a href="#cb1-73"></a><span class="ss">-   </span>Mendeleev's publication of the first periodic table (1869)</span>
+<span id="cb1-74"><a href="#cb1-74"></a></span>
+<span id="cb1-75"><a href="#cb1-75"></a>In this revisionist history of the computer (and ultimately of R), this period in history marked a transformation of power. The structure and organization of society was changing along with the flow of people, ideas, and commerce. Western, liberal democracies had to develop new technologies of population control in order to prevent all of these liberal changes from challenging their position of authority and power.</span>
+<span id="cb1-76"><a href="#cb1-76"></a></span>
+<span id="cb1-77"><a href="#cb1-77"></a><span class="fu">### Late 19th century</span></span>
+<span id="cb1-78"><a href="#cb1-78"></a></span>
+<span id="cb1-79"><a href="#cb1-79"></a>With the relative liberation of black bodies (and other bodies, as well) came a scientific imperative. Power continued to demand that these bodies be inferior, but evidence of inferiority was no longer to come from the conditions and dimensions of the body. Nay, the newly-available technologies of genetic inheritance and natural selection allowed a regime of a new flavor to take hold, one that cited hard science to support and justify the inequities in society. Inferiority was moving through the skin, into the body, and - importantly - into the mind.</span>
+<span id="cb1-80"><a href="#cb1-80"></a></span>
+<span id="cb1-81"><a href="#cb1-81"></a>Wilhelm Wundt opened the first psychology lab, and William James delivered the first psychology course and textbook. Galton, who was studying intelligence, popularized the idea of the median <span class="co">[</span><span class="ot">@bakkerHistoricalPhenomenologyMean2006</span><span class="co">]</span>. Psychology and with it psychological statistics, was beginning to take shape to meet the new demands of the state: a theory and a technology that will find permanent, internal traits upon which to stratify society into haves and have-nots. The story of the emergence of psychological statistics is incomplete without mention of eugenics. The tools being developed were not neutral and scientific, but overtly political, aimed at achieving the goals of the state.</span>
+<span id="cb1-82"><a href="#cb1-82"></a></span>
+<span id="cb1-83"><a href="#cb1-83"></a>Also in the late 19th century was what Foucault called the implantation of perversions <span class="co">[</span><span class="ot">@foucaultHistorySexuality1978</span><span class="co">]</span> - the creation of new symbolic threats to the body and to society as a whole. This operated through the invention of new characters that continue to exist within society today.</span>
+<span id="cb1-84"><a href="#cb1-84"></a></span>
+<span id="cb1-85"><a href="#cb1-85"></a>Firstly, there was the medical specification of the homosexual <span class="co">[</span><span class="ot">@townsendMedicalizationHomosexuality2011</span><span class="co">]</span>. This began in 1864 with the work of Karl-Heinrich Ulrichs, who was gay himself. He specified men as either urnings or dionings. Urnings and Dionings are both male-bodied creatures, but the urning experiences the desires and character of a female <span class="co">[</span><span class="ot">@townsendMedicalizationHomosexuality2011</span><span class="co">]</span>. The dioning, by contrast, is normal. Discourse about the urning (renamed to the invert, and then to the homosexual) continued well into the 20th century, and the sissy (the archetype the invert represents) is, obviously, still with us.</span>
+<span id="cb1-86"><a href="#cb1-86"></a></span>
+<span id="cb1-87"><a href="#cb1-87"></a>Also within this time period, was the medical specification of the hysteric woman, which was initially the perogative of Jean-Martin Charcot.</span>
+<span id="cb1-88"><a href="#cb1-88"></a></span>
+<span id="cb1-89"><a href="#cb1-89"></a>I'll mention just one more character that was invented in the later 19th century. For all of American history to this point, immigration law was about the process of naturalization - immigrants becoming citizens. From the beginning of the union, only white men of "good moral character" were allowed to become American citizens (Naturalization act of 1790?). There was little effort to actually prevent bodies from entering the country.</span>
+<span id="cb1-90"><a href="#cb1-90"></a></span>
+<span id="cb1-91"><a href="#cb1-91"></a>Until 1875. With the passage fo the Page Act of 1875, the United States declared its intention to keep undesirable bodies out of the country for the first time. Shortly thereafter, the "illegal alien" was invented as a result of the Chinese Exclusion Act of 1882, which is the only American immigration law I am aware of that names a specific national group in its title.</span>
+<span id="cb1-92"><a href="#cb1-92"></a></span>
+<span id="cb1-93"><a href="#cb1-93"></a>All this to say that the nature and enforcement of undesirability were in massive flux in the late 19th century. The foreign element was moving within: the enslaved African could become a citizen and could vote, the invert or the hysteric could be hiding within anyone, and the state took up the power to deport bodies that did not belong. No longer was the anthropologist writing about the inferiority of foreign peoples (although to be clear, they absolutely were still doing that); the pschiatrist was now writing about our own inferiority.</span>
+<span id="cb1-94"><a href="#cb1-94"></a></span>
+<span id="cb1-95"><a href="#cb1-95"></a>I consider the birth of statistics to be in this time period, which does not have pleasant implications for statistics as a field. There is a lot more to be said about the advent of statistics, and how statistics is designed to serve power (i.e., fulfill the demands of the state). However, I'm going to leave all of that unsaid and refocus on computation in general, and statistical computing in particular.</span>
+<span id="cb1-96"><a href="#cb1-96"></a></span>
+<span id="cb1-97"><a href="#cb1-97"></a>The late 19th century was also, notoriously, the era of massive trusts in the United States. These monstrous, monopolistic companies exploited both the consumer and the worker, but the United States did not yet have a legal mechanism for breaking them up. The most important monopoly for our purposes: the one that is most influential is the development of S and then R is the AT&amp;T monopoly.</span>
+<span id="cb1-98"><a href="#cb1-98"></a></span>
+<span id="cb1-99"><a href="#cb1-99"></a>Another monopoly was also forming. Using Jacquard's punched cards, an American man designed and patented a system to read punched cards. In 1890, this punched card system was used to complete the census, resulting in the 1890 census being completed two years quicker than the 1880 one. The company that developed this technology would go on to become IBM, which enjoyed monopoly status in the computing industry for several decades.</span>
+<span id="cb1-100"><a href="#cb1-100"></a></span>
+<span id="cb1-101"><a href="#cb1-101"></a><span class="fu">## Early 19th century: the advent of computing {#sec-early-19th-century-the-advent-of-computing}</span></span>
+<span id="cb1-102"><a href="#cb1-102"></a></span>
+<span id="cb1-103"><a href="#cb1-103"></a>Near the end of the 19th century, a mathematician named David Hilbert decided that mathematics needed to be formalized. Up to that point, it had developed as myriad sub-disciplines that failed to cohere into a single, interconnected web of mathematics. Hilbert believed that it should, and his goal was to formalize this system. He believed that such a system (of mathematical axioms) needed to have three properties:</span>
+<span id="cb1-104"><a href="#cb1-104"></a></span>
+<span id="cb1-105"><a href="#cb1-105"></a><span class="ss">1.  </span>to be consistent: it should not be possible to derive that a statement is both true and false</span>
+<span id="cb1-106"><a href="#cb1-106"></a><span class="ss">2.  </span>to be complete: it should be possible to derive the truth of every true statement (or the falsity of its negation)</span>
+<span id="cb1-107"><a href="#cb1-107"></a><span class="ss">3.  </span>to be decidable: there must be an algorithm that can identify all and only true statements in a finite number of steps.</span>
+<span id="cb1-108"><a href="#cb1-108"></a></span>
+<span id="cb1-109"><a href="#cb1-109"></a>(The excitement about formalizing affected Hilbert, but by no means was he the first or the only to be caught up in this mess. Notoriously, Whitehead and Russel got spun up enough to publish a 126-page long proof that $1+1=2$. I'm mostly attributing these three demands to Hilbert for sanity's sake because I cannot stand to write out the sordid details. These three "properties" as I call them, are really inspired very loosely on any specific, cite-able Hilbert publication. He did publish a list of <span class="co">[</span><span class="ot">23 questions</span><span class="co">](https://en.wikipedia.org/wiki/Hilbert%27s_problems)</span>, which refer to the properties I mention here, but understand this as a drastically over-simplified view of the mathematical debates unfolding at the time.)</span>
+<span id="cb1-110"><a href="#cb1-110"></a></span>
+<span id="cb1-111"><a href="#cb1-111"></a>Mathematics was not the only field to be heating up. There was growing speculation in physics that matter may not be as continuous as was previously assumed. In 1900, Max Planck published the first quantum theory in physics, which was aimed at modelling thermal radiation. Shortly thereafter, Albert Einstein published another quantum theory, this time aimed at modeling the the photoelectric effect. Both of these models used quantum stuff (i.e., minimal, discrete units of energy, creating measurements of energy that are always a multiple of the quantum unit), but the authors did not actually believe the world was quantum. Famously, Einstein's theories of relativity both rely on space-time being continuous. They merely believed quantized math was the best way to explain non-quantum physical phenomena.</span>
+<span id="cb1-112"><a href="#cb1-112"></a></span>
+<span id="cb1-113"><a href="#cb1-113"></a>Neils Bohr went the whole way, creating his model of the atom, with distinct, orbital electron shells. In the 1920's quantum mechanics, as we know it today, came into existence. It did not make Einstein happy. Einstein wanted a deterministic world, where each cause has an specific, reliable effect. Quantum mechanics is not a deterministic theory of physics, but a probabilistic one. I take this diversion into the physical sciences not only to stress that this is a transition period within the physical sciences, but to temper my claim from the previous section. The "demands of power" did no less to supercharge the development of statistics and probability than did rapid changes in the way we understand and model the physical world.</span>
+<span id="cb1-114"><a href="#cb1-114"></a></span>
+<span id="cb1-115"><a href="#cb1-115"></a>During my quantum mechanical tangent, Gödel has proven that achieving the second property of Hilbert's idealistic system is unlikely. In fact, Gödel establishes that it is logically impossible that any formal mathematical system could be complete, as defined above.</span>
+<span id="cb1-116"><a href="#cb1-116"></a></span>
+<span id="cb1-117"><a href="#cb1-117"></a>To answer the question about whether mathematics is decidable, a new technology is needed. Before a mathematician can make formal claims about the capabilities or limitations of algorithms in general (as Hilbert demanded), she must first provide a rigorous definition of an algorithm. Two mathematicians took up this task, Alonzo Church who developed the lambda calculus, and Alan Turing who developed the Turing machine. Both men reached the same conclusion: mathematics cannot be decidable. It is logically impossible to make an algorithm (a Turing machine) that can identify all and only true statements <span class="co">[</span><span class="ot">@turingComputableNumbersApplication1936</span><span class="co">]</span>. There are, as it turns out, hard limits on the types of problems algorithms are able to solve (at least in a finite number of steps).</span>
+<span id="cb1-118"><a href="#cb1-118"></a></span>
+<span id="cb1-119"><a href="#cb1-119"></a>Thus, Turing half accidentally created the field of computer science while trying to answer a question about the foundations of mathematics. This is also an opportune time to introduce the term **Turing-complete** which refers to anything (model of computation, programming language, a book of instructions used by a human computer) that can simulate the a Turing machine. Any Turing-complete system is essentially equivalent to the original Turing machine described in <span class="co">[</span><span class="ot">@turingComputableNumbersApplication1936</span><span class="co">]</span>. The analytical engine is (theoretically, of course, it never got built) Turing-complete; Jacquard's loom, by contrast, is not. Modern programming languages are, for the most part, Turing complete, meaning that any function you write in a modern programming language could be performed on the OG Turing machine from <span class="co">[</span><span class="ot">@turingComputableNumbersApplication1936</span><span class="co">]</span>.</span>
+<span id="cb1-120"><a href="#cb1-120"></a></span>
+<span id="cb1-121"><a href="#cb1-121"></a>The first electric, digital computer was not fully constructed until 1945. It was built by and for the U.S. military, who named the machine <span class="co">[</span><span class="ot">ENIAC</span><span class="co">](https://en.wikipedia.org/wiki/ENIAC)</span>. Thus, the first computations done on an electric, digital computer were intended to speed up the process of human and earthly destruction. ENIAC was a bunch of coordinated units that ran according to the placement of wires on the machine <span class="co">[</span><span class="ot">@shustekProgrammingENIACExample2016</span><span class="co">]</span>. The machine took IBM punched cards as input (remember the punched card monopolist from the end of the 19th century?).</span>
+<span id="cb1-122"><a href="#cb1-122"></a></span>
+<span id="cb1-123"><a href="#cb1-123"></a>Initially, the wires on ENIAC had to be moved for each new problem <span class="co">[</span><span class="ot">@shustekProgrammingENIACExample2016</span><span class="co">]</span>. The process of re-configuring the machine for each new problem was tedious, but it was possible, and so ENIAC was Turing-complete. However, having to physically move wires prevented the machine from achieving the utility of a modern programmable computer.</span>
+<span id="cb1-124"><a href="#cb1-124"></a></span>
+<span id="cb1-125"><a href="#cb1-125"></a>This machine was very quickly modified in a way that dramatically changed its function. Instead of having to move wires, and then feed the machine (punched card) instructions based on the position of those wires, it would be much faster permanently code instructions (functions) into the machine. Then, the input of the machine could describe the sequence of functions. You could achieve looping by instructing ENIAC to perform a function repeatedly and conditional (if-statement) execution by instructing ENIAC to skip functions in the sequence.</span>
+<span id="cb1-126"><a href="#cb1-126"></a></span>
+<span id="cb1-127"><a href="#cb1-127"></a>This is the idea behind modern programming languages. Instructions for the computer, written in the computer's language (ENIAC's language was wires, the one we'll soon focus on is R) are stored within the machine. "Programming" the machine involves telling it which instructions to perform and in which order. In 1948, the first ENIAC "program" ran under this new computer architecture was a **Monte Carlo simulation** of neutron decay during nuclear fission <span class="co">[</span><span class="ot">@shustekProgrammingENIACExample2016</span><span class="co">]</span>.</span>
+<span id="cb1-128"><a href="#cb1-128"></a></span>
+<span id="cb1-129"><a href="#cb1-129"></a><span class="fu">## AT&amp;T, Bell Labs, and S</span></span>
+<span id="cb1-130"><a href="#cb1-130"></a></span>
+<span id="cb1-131"><a href="#cb1-131"></a>Monopolies suck, and AT&amp;T did as well. Throughout the beginnning of the century, it gradually became clear that the benefits of a monopolist teleohpne provider were not going to materialize. In 1949, the U.S. Department of Justice sued AT&amp;T for violating the anti-trust act, and the resulting 1956 consent decree prohibited AT&amp;T from entering the computer business <span class="co">[</span><span class="ot">@changCaseStudyDivestiture</span><span class="co">]</span>.</span>
+<span id="cb1-132"><a href="#cb1-132"></a></span>
+<span id="cb1-133"><a href="#cb1-133"></a>This consent decree did not prevent the further degradation of AT&amp;T's service, nor did it prevent future anti-trust lawsuits. Throughout the 60's and early 70's, the U.S. government dogged AT&amp;T with recurrent anti-trust lawsuits. In 1974, the Department of Justice began their final lawsuit against a monopoly AT&amp;T. Over the course of the next decade, the government proved that AT&amp;T was leveraging its monopoly power to predatory ends, annihilating potential competitors and pricing services far beyond the cost to provide them. This lawsuit ended in 1982 with the dissolution of AT&amp;T into 7 Regional Bell Operating Companies <span class="co">[</span><span class="ot">@changCaseStudyDivestiture</span><span class="co">]</span>.</span>
+<span id="cb1-134"><a href="#cb1-134"></a></span>
+<span id="cb1-135"><a href="#cb1-135"></a>Bell Labs was probably the most important laboratory within AT&amp;T. During the early 70's, the researchers at the statistics research department within Bell Labs was using the programming language FORTRAN. FORTRAN is a general purpose, compiled programming language, developed by IBM (the punched card guys).</span>
+<span id="cb1-136"><a href="#cb1-136"></a></span>
+<span id="cb1-137"><a href="#cb1-137"></a>(This isn't super relevant, but I think it's fun. Before 1968, computational statisticians had been using a algorithm called RANDU, which was a FORTRAN function that generated random numbers. In 1968, a mathematician proved that the allegedly random numbers actually all had to lie on a series of parallel hyper-planes, and we thus not actually random. wtf is a series of parallel hyper-planes? See below)</span>
+<span id="cb1-138"><a href="#cb1-138"></a></span>
+<span id="cb1-141"><a href="#cb1-141"></a><span class="in">```{r}</span></span>
+<span id="cb1-142"><a href="#cb1-142"></a><span class="co">#| lst-label: lst-snafu</span></span>
+<span id="cb1-143"><a href="#cb1-143"></a><span class="co">#| lst-caption: a statistical embarassment from 1968</span></span>
+<span id="cb1-144"><a href="#cb1-144"></a><span class="co">#| echo: FALSE</span></span>
+<span id="cb1-145"><a href="#cb1-145"></a><span class="fu">data</span>(randu)</span>
+<span id="cb1-146"><a href="#cb1-146"></a>lattice<span class="sc">::</span><span class="fu">cloud</span>(y <span class="sc">~</span> x <span class="sc">*</span> z, <span class="at">data=</span>randu,</span>
+<span id="cb1-147"><a href="#cb1-147"></a>  <span class="at">screen =</span> <span class="fu">list</span>(<span class="at">y =</span> <span class="dv">147</span>),</span>
+<span id="cb1-148"><a href="#cb1-148"></a>  <span class="at">perspective =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-149"><a href="#cb1-149"></a></span>
+<span id="cb1-150"><a href="#cb1-150"></a><span class="in">```</span></span>
+<span id="cb1-151"><a href="#cb1-151"></a></span>
+<span id="cb1-152"><a href="#cb1-152"></a>FORTRAN, the name, stands for "formula translation," and it was primarily used for scientific computing, like computing weather models or doing computational physics - things that have to do with numbers, essentially. It is still used in these fields to some extent, although it is less popular for scientific computing than other, more recent programming languages, like R. FORTRAN is, computationally speaking, incredibly efficient, mostly by natively supporting parallel computation. For this reason, FORTRAN is still used to benchmark supercomputers. You can learn more about FORTRAN on <span class="co">[</span><span class="ot">its website</span><span class="co">](https://fortran-lang.org/)</span>.</span>
+<span id="cb1-153"><a href="#cb1-153"></a></span>
+<span id="cb1-154"><a href="#cb1-154"></a>In any case, in the 1970's, the statistics research department at Bell Labs found FORTRAN to be somewhat insufficient, and they set out to develop a new language that would more fully suit their needs <span class="co">[</span><span class="ot">@beckerBriefHistory1994</span><span class="co">]</span>.</span>
+<span id="cb1-155"><a href="#cb1-155"></a></span>
+<span id="cb1-156"><a href="#cb1-156"></a><span class="fu">### S</span></span>
+<span id="cb1-157"><a href="#cb1-157"></a></span>
+<span id="cb1-158"><a href="#cb1-158"></a>S is a statistical computing language that was developed first at Bell Laboratories in the mid 1970s. At the time, statistics was undergoing a change. Previously, statistics had been developing as a set of methods - essentially algorithms that prescriptively described how to complete a statistical analysis from beginning to end. In the early 70's, John Tukey was working at Bell Labs and at Princeton, and he was making a lot of noise about the problems with statistics. He popularized a different approach to statistics, establishing something of a binary between data analysis and statistics, just as I did between machine learning and statistics (in @sec-tools; @tukeyDataAnalysisComputation1972).</span>
+<span id="cb1-159"><a href="#cb1-159"></a></span>
+<span id="cb1-160"><a href="#cb1-160"></a>The statistics research department was beginning to demand a tool that aligned with Tukey's approach. FORTRAN, developed more than a decade before that demand was created at and by Bell Labs, did not measure up to the task. Instead, they decided to develop a new language, which they named S. Initially, there was a large focus on being able to import FORTRAN functions into S, so that there could be a smooth transition from FORTRAN to S within Bell Labs.</span>
+<span id="cb1-161"><a href="#cb1-161"></a></span>
+<span id="cb1-162"><a href="#cb1-162"></a>S was built from the ground up to include graphics capabilities, and a structure that enabled and encouraged exploratory data analysis. The basic data structure in S is a vector of like-elements, which were used to make matrices and time-series; S also included lists (key-value maps) and the <span class="in">`$`</span> operator, which could be used to retrieve specific components of larger data structures <span class="co">[</span><span class="ot">@beckerBriefHistory1994</span><span class="co">]</span>. It also included all of the arithmetic operators that you need in a desk calculator, making it useful for that purpose, as well.</span>
+<span id="cb1-163"><a href="#cb1-163"></a></span>
+<span id="cb1-164"><a href="#cb1-164"></a>In 1980, S was distributed outside of Bell Labs for the first time. Initially, it was distributed for a nominal fee and for educational use only, but by 1981 it was widely available <span class="co">[</span><span class="ot">@beckerBriefHistory1994</span><span class="co">]</span>. After it began to be distributed, the developers added explicit looping (i.e., <span class="in">`for`</span> loops), as well as the <span class="in">`apply`</span> function, which could be used to loop over a vector while applying a function <span class="co">[</span><span class="ot">@beckerBriefHistory1994</span><span class="co">]</span>. The developers also introduced the "category", which is now called the <span class="in">`factor`</span> in R. Categories are vectors of data. They merge numerical and string data types - each entry in the vector is assigned a category label (so that you can read it), as well as a underlying integer (so that you can do math with categories).</span>
+<span id="cb1-165"><a href="#cb1-165"></a></span>
+<span id="cb1-166"><a href="#cb1-166"></a>Although S was developed initially by statisticians, it clearly had utility as a data manipulation, graphics, and exploratory data analysis tool. In 1988, the developers released the "New S," renaming the software after some significant changes. The most significant feature of New S was the inclusion of **first class functions**, which are functions that you can assign to a name and and then refer to by that name. Functions are first class in that they are S objects, just like any vector or matrix. For the first time, S had **depreciated** functions, which R also has. Depreciated functions are functions for which there is a better alternative. They are generally still included in R and S distributions (so old code that uses depreciated functions can still run), but it's best to avoid using them (and to use the better alternatives instead). By 1988, many of the FORTRAN functions from the initial development of S were rewritten in C, which is a general purpose programming languages on which New S is built <span class="co">[</span><span class="ot">@beckerBriefHistory1994</span><span class="co">]</span>.</span>
+<span id="cb1-167"><a href="#cb1-167"></a></span>
+<span id="cb1-168"><a href="#cb1-168"></a>In 1991, the S development team expanded, and there was a focus on adding statistical software to the S language. Although S was developed by statisticians who intended to use it for statistics, the statistics are not inherent in S: "S is a computational language and environment for data analysis and graphics" <span class="co">[</span><span class="ot">@beckerBriefHistory1994</span><span class="co">]</span>. As such, the developers added the <span class="in">`formula`</span> class, which could be used to specify statistical models. The formula is marked by the <span class="in">`~`</span> operator, with the dependent variable on the left and the independent variable(s) on the right (e.g., <span class="in">`y ~ x + w + x*w`</span>).</span>
+<span id="cb1-169"><a href="#cb1-169"></a></span>
+<span id="cb1-170"><a href="#cb1-170"></a>Also in the 1991 release was the <span class="in">`data.frame`</span>. Matrices are like vectors: they can only have one type of data. If you have a matrix that has even one number in it, then the entire matrix must be numeric, even if you want to use it to represent string data (like names and job titles) or categorical data <span class="co">[</span><span class="ot">@beckerBriefHistory1994</span><span class="co">]</span>. So, a matrix is a combination of multiple vectors, all of the same type. A <span class="in">`data.frame`</span>, by contrast, is a combination of vectors of *any* type. You can have a string vector (column) in the data frame representing job title, as well as a numeric vector representing income. As with matrices, you can use the <span class="in">`$`</span> operator to pick a vector out of the data frame (e.g., <span class="in">`data$income`</span> picks out the income vector in the data frame called <span class="in">`data`</span>).</span>
+<span id="cb1-171"><a href="#cb1-171"></a></span>
+<span id="cb1-172"><a href="#cb1-172"></a>It's not really possible for a programming language to die. As we have seen with FORTRAN and S, new programming languages often use code from their older counterparts, especially at the beginning. Even though I can no longer find S on the internet and run it on my computer, a very large number of S functions continue to exist in R.</span>
+<span id="cb1-173"><a href="#cb1-173"></a></span>
+<span id="cb1-174"><a href="#cb1-174"></a>I am able to find relatively scant documentation about this final period in the history of S, so the rest of this section is at least somewhat speculative (except claims that are cited, of course).</span>
+<span id="cb1-175"><a href="#cb1-175"></a></span>
+<span id="cb1-176"><a href="#cb1-176"></a>What is the need for R if S exists? Well, well, well. Let's talk about corporate fuckery, which both killed S and prevented it from dying. I have been making a much bigger deal over anti-trust law than the vast majority of those who introduce R to their students. To this point, as far as AT&amp;T and Bell Labs are concerned, I have presented a world in which they are legally prohibited from selling computers (and presumably, computer software) as a result of the Consent Decree from 1956.</span>
+<span id="cb1-177"><a href="#cb1-177"></a></span>
+<span id="cb1-178"><a href="#cb1-178"></a>Up to this point, no one was making money off of S. Although Bell was initially charging folks a nominal fee to use the software <span class="co">[</span><span class="ot">@beckerBriefHistory1994</span><span class="co">]</span>, this practice ended quickly, meaning that the software was being distributed for free. As a result of the anti-trust, Bell Labs was not going to monetize this technology. Instead, one of their former employees had to do it.</span>
+<span id="cb1-179"><a href="#cb1-179"></a></span>
+<span id="cb1-180"><a href="#cb1-180"></a>In the 70s and 80s, the graphical user interface (GUI) was being born. This emerging technology came with a new generation of capitalists who had not been subject to extensive anti-trust, in which former trade union president Ronald Reagan did not believe - the capitalists who bring us Microsoft and Apple, who own outright the operating systems of about 85% of the worlds' computers (and many phones and other devices, as well).</span>
+<span id="cb1-181"><a href="#cb1-181"></a></span>
+<span id="cb1-182"><a href="#cb1-182"></a>S wasn't fated to become Windows; it was fated to become S-PLUS. S-PLUS is/was a statistical computing software with a graphical user interface. It was developed by a company owned by a former Bell Labs employee and University of Washington professor, <span class="co">[</span><span class="ot">R Douglas Martin</span><span class="co">](https://faculty.washington.edu/martinrd/)</span>. His work is primarily in econometrics, and he has extensively published about investment risks. Because of this, and because S-PLUS was and is mostly used by economists, a cynic might call it an application to be used for those who are unwilling or unable to learn how to code (similar in character to Microsoft's SPSS). S-PLUS started circulating (for a fee) in about the year 1987, and it did include features that S did not (like generalized linear models).</span>
+<span id="cb1-183"><a href="#cb1-183"></a></span>
+<span id="cb1-184"><a href="#cb1-184"></a>Let me just quickly recap, so I can make sure everyone is oriented in time - I'm discussing a lot of events that overlap and are not all well documented. In 1980, S was released to the public; in 1988, S had a significant update, becoming "New S"; around 1987, a former employee of Bell Labs developed S-PLUS; in 1991, S had an update that focused on statistics.</span>
+<span id="cb1-185"><a href="#cb1-185"></a></span>
+<span id="cb1-186"><a href="#cb1-186"></a>In 1991, two statisticians quietly began work on the project (R) that would more-or-less kill S and S-PLUS.</span>
+<span id="cb1-187"><a href="#cb1-187"></a></span>
+<span id="cb1-188"><a href="#cb1-188"></a>In 1993, S and S-PLUS were reunited when Bell Labs sold S to the company that had developed S-PLUS. That company, in turn, immediately merged with a company called MathSoft. S-PLUS was only available on windows, and its relationship with Microsoft strengthened when features were added to connect S-PLUS to Excel and to SPSS.</span>
+<span id="cb1-189"><a href="#cb1-189"></a></span>
+<span id="cb1-190"><a href="#cb1-190"></a>Part of the company (MathSoft) was sold, it got renamed (to Insightful), the exclusive license to distribute S turned into AT&amp;T (i.e., Lucent, one of the companies that remained after AT&amp;T) selling S so that it became the property of Insightful. Then Insightful got bought by a company called TIBCO, and then...</span>
+<span id="cb1-191"><a href="#cb1-191"></a></span>
+<span id="cb1-192"><a href="#cb1-192"></a>I think you get the general idea. S and S-PLUS got bought, and sold, and licensed, and merged, and acquired to the point that it no longer really exists in any meaningful, public way. But by the 2000s, that didn't matter.</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/huntervooys/hunterr_2024/edit/main/01_lore.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/huntervooys/hunterr_2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
