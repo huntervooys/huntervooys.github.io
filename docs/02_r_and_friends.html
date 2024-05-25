@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>hunterr_2024 - 2&nbsp; Modern R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03_r_101.html" rel="next">
+<link href="./01_lore.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "/"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modern R</span></h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">hunterr_2024</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/huntervooys/hunterr_2024" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">R and Friends</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_lore.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Lore</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_r_and_friends.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modern R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_r_101.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R 101</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualization</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probability Primer</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./0R_references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./0A_resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Getting Help</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">on this page</h2>
+   
+  <ul>
+  <li><a href="#initial-development-of-r-1990s" id="toc-initial-development-of-r-1990s" class="nav-link active" data-scroll-target="#initial-development-of-r-1990s"><span class="header-section-number">2.1</span> Initial Development of R (1990s)</a>
+  <ul class="collapse">
+  <li><a href="#free-software" id="toc-free-software" class="nav-link" data-scroll-target="#free-software"><span class="header-section-number">2.1.1</span> Free Software</a></li>
+  <li><a href="#open-sourcing-and-crowd-sourcing" id="toc-open-sourcing-and-crowd-sourcing" class="nav-link" data-scroll-target="#open-sourcing-and-crowd-sourcing"><span class="header-section-number">2.1.2</span> Open Sourcing and Crowd Sourcing</a></li>
+  <li><a href="#wickhams-tidyverse" id="toc-wickhams-tidyverse" class="nav-link" data-scroll-target="#wickhams-tidyverse"><span class="header-section-number">2.1.3</span> Wickham’s Tidyverse</a></li>
+  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data"><span class="header-section-number">2.1.4</span> Tidy Data</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/huntervooys/hunterr_2024/edit/main/02_r_and_friends.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/huntervooys/hunterr_2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modern R</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="initial-development-of-r-1990s" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="initial-development-of-r-1990s"><span class="header-section-number">2.1</span> Initial Development of R (1990s)</h2>
+<p>In 1991, two professors in New Zealand began to develop R, a process which they documented in <span class="citation" data-cites="ihakaLanguageDataAnalysis1996">(<a href="0R_references.html#ref-ihakaLanguageDataAnalysis1996" role="doc-biblioref">Ihaka and Gentleman 1996</a>)</span>. R is very similar to S; so similar, in fact, that it is frequently called a <em>dialect</em> of S. What is the difference between S and R? The creators of R describe it as having the syntax of S (meaning that most examples, including the following example, can be run in S or R) but the semantics of Scope (which is a programming language from the Lisp family).</p>
+<p>Probably the key difference between the two languages is the lexical scoping. Whenever you use R (or most other programming languages), you have to have something called a frame. Frames include things like functions and named variables. Each function creates its own frame. The frame for the function <code>f</code> in the example below (from <span class="citation" data-cites="ihakaLanguageDataAnalysis1996">Ihaka and Gentleman (<a href="0R_references.html#ref-ihakaLanguageDataAnalysis1996" role="doc-biblioref">1996</a>)</span>) contains the named variable y and the named function g. The named function g, as a function, creates its own frame (in which to store variables and functions). There is also something called a <strong>global frame</strong> which, in the following example, includes an assignment of the value 123 to the name <code>y</code> and the assignment of some function to the name <code>f</code>.</p>
+<div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1"></a>y <span class="ot">&lt;-</span> <span class="dv">123</span> <span class="co"># assign 123 to the name y</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-8-2" class="code-annotation-target"><a href="#annotated-cell-8-2"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="annotated-cell-8-3"><a href="#annotated-cell-8-3"></a>  y <span class="ot">&lt;-</span> x <span class="sc">*</span> x <span class="co"># assign x times x to the name y</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-8-4" class="code-annotation-target"><a href="#annotated-cell-8-4"></a>  g <span class="ot">&lt;-</span> <span class="cf">function</span>() <span class="fu">print</span>(y) <span class="co"># create new function and new scope</span></span>
+<span id="annotated-cell-8-5"><a href="#annotated-cell-8-5"></a>  <span class="fu">g</span>() <span class="co"># return the output of function g</span></span>
+<span id="annotated-cell-8-6"><a href="#annotated-cell-8-6"></a>}</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-8-7" class="code-annotation-target"><a href="#annotated-cell-8-7"></a><span class="fu">f</span>(<span class="at">x=</span><span class="dv">10</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="2,3,5,6" data-code-annotation="1">the the beginning of the declaration of function <code>f</code> (between lines 2 and 6)</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="4" data-code-annotation="2">the declaration of function <code>g</code></span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="7" data-code-annotation="3">a function call for function <code>f</code> (with the argument <code>x</code> set to equal 10)</span>
+</dd>
+</dl>
+</div>
+<div id="fig-r_and_s" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-r_and_s-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 100</code></pre>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r_and_s-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: an example from <span class="citation" data-cites="ihakaLanguageDataAnalysis1996">Ihaka and Gentleman (<a href="0R_references.html#ref-ihakaLanguageDataAnalysis1996" role="doc-biblioref">1996</a>)</span>
+</figcaption>
+</figure>
+</div>
+<p>As you can see, in R, running the function <code>f</code> with 10 as an argument results in the function returning 100 (10 times 10). In S, this very same code would have resulted in function <code>f</code> returning the value 123. In S, when we define the function <code>g</code>, S uses the global frame as the basis for the function, including the assignment of the value 123 to <code>y</code>. R, by contrast, creates <code>g</code> with a locally-scoped frame, meaning that the frame for <code>g</code> includes the assignment of the value <code>x * x</code> to the variable <code>y</code> (assignments which are inherited from the <strong>parent frame</strong>). Thus, in S, the function <code>g</code> is evaluated as <code>print(123)</code>, but the R function is evaluated as <code>print(x * x)</code> (the function <code>f</code> is responsible for substituting <code>x</code> to make <code>print(10 * 10)</code>.</p>
+<p>Unlike Scheme, but like S, R uses <strong>lazy evaluation</strong>. In essence, this means that R does not run your code unless it absolutely has to. I’ll use the example of <a href="#fig-r_and_s" class="quarto-xref">Figure&nbsp;<span>2.1</span></a> to explain what this means. Lines 2 through 6 contain the declaration of function <code>f</code> (even though line 4 also contains the declaration of function <code>g</code>. When you run line 2, all of the lines down to line 6 (where the closing bracket, <code>}</code> is located) get stored in R’s memory next to the name <code>f</code>. However, R will not run the function <code>f</code> until you actually go to use it (i.e., until you make the function call in line 7). This is why we call R lazy, but what’s the big deal?</p>
+<p>If you make a syntax error in your declaration of function <code>f</code>, R is going to have to tell you that you made a syntax error at some point. In a language that is not lazy, the language evaluates function <code>f</code> when you store it. Thus, a non-lazy language will send you a syntax error after you run the function declaration (i.e., after you run line 2, which also causes lines 3-6 to run). If <a href="#fig-r_and_s" class="quarto-xref">Figure&nbsp;<span>2.1</span></a> were written in a non-lazy language, the syntax error would occur where the <code>1</code> annotation is. However, in R, the function is merely stored when you run lines 2-6. Function <code>f</code> does not actually run until you call it in line 7 (marked with a <code>3</code> in <a href="#fig-r_and_s" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>). Laziness is a feature that R inherited from S, which is also lazy.</p>
+<p>This is getting a bit technical. The two men who developed R are Ross Ihaka and Robert Gentleman. On a family tree posted on Ihaka’s personal website, he lists himself as the academic grandchild of John Tukey, then statistician at Bell Labs that popularized exploratory data analysis (the framework that created the need for S, which was also, if you’ll recall developed at Bell Labs).</p>
+<p>Ihaka is a now retired statistician from the University of Auckland. Gentleman is a bioinformatician who currently works at Harvard and 23andMe. Allegedly, Ihaka and Gentleman developped R for use in teaching statistics. That was part of both of their jobs as professors, after all. However, this doesn’t seem very plausible (why would the professors write their own statistical programming languages rather than using a well-documented one which would seem to be better for pedagogy), nor have I seen any specific evidence for it. That being said, in the years 1993-94, R was stuck at the University of Auckland, being used by them, probably their peers, and less probably their students, but the software was not yet being distributed, as S or S-PLUS was.</p>
+<p>In 1995, one of their colleagues convinced them to licence use of the software as <strong>free software</strong> under a GNU general public license.</p>
+<section id="free-software" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="free-software"><span class="header-section-number">2.1.1</span> Free Software</h3>
+<p>I just bolded the term <strong>free software</strong>; why? As it turns out, the term <strong>free software</strong> has a specific definition that extends far beyond the idea of “software that you don’t have to pay for.” So what is free software? Free software is characterized by the four freedoms <span class="citation" data-cites="freesoftwarefoundationWhatFreeSoftware">(<a href="0R_references.html#ref-freesoftwarefoundationWhatFreeSoftware" role="doc-biblioref">Foundation n.d.</a>)</span>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/freedoms.jpg" class="img-fluid figure-img"></p>
+<figcaption>Free Software Foundation’s Four Essential Freedoms</figcaption>
+</figure>
+</div>
+<p>The idea of free software, and it’s formation in the four freedoms seen above, came to be popular in the mid-80’s after the Reagan government had made clear it’s stance (and the republican, and soon the democratic, party’s stance) on anti-trust enforcement. In the wake of the disruption to the computing (IBM) and telephone (AT&amp;T) industries, the Reaganites declared that we were entering into an era of free, competitive trade while setting up a regulatory framework that would allow tech companies to consolidate power and market share ad infinitum, resulting in the current big 4(-ish): Apple, Alphabet (Google), Amazon, and Meta (and Microsoft, Nvidia, and potentially Tesla and like Netflix, depending on who you ask).</p>
+<p>It is a good thing for us, then, that none of these companies own R, which the developers have promised will remain free software indefinitely.</p>
+</section>
+<section id="open-sourcing-and-crowd-sourcing" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="open-sourcing-and-crowd-sourcing"><span class="header-section-number">2.1.2</span> Open Sourcing and Crowd Sourcing</h3>
+<p>These days, it feels like only a real purist will call R <strong>free software</strong>. The more en vogue term is “open source.” The Free Software Foundation would like you to treat the terms as separate however (see <a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">this article</a>).</p>
+<p>In reality, the labels “open source” and “free software” are mostly synonymous in that they refer to many of the same software. As Freedoms 1 and 3 make clear, software must be open source before it can be free. The free software folks’ biggest problem with “open source” is one of semantics, really. They claim that the “open source” movement argues too much about how free software is good for business and software development (i.e., because curious users can look for and find bugs). The free software people are not interested in these practical matters, focusing instead of the moral question of what sort of software is right and wrong. They correspondingly argue their case in the form of moral imperatives (the four freedoms).</p>
+<p>I am less interested in these theoretical questions, and more interested in explaining to you what the implication of free or open software is bound to be (at least in the case of R): crowd-sourced development.</p>
+<p>R itself provides you with basic statistical functionality. However, the vast majority of what is commonly called “R” is not actually part of the base distribution of R. Instead, most of the functionality is packaged within “packages,” which are you load into R with the <code>library()</code> function, as shown below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<p>The <code>tidyverse</code> is really a “meta”-package (as is the <code>tidymodels</code> package, by the way). This means that it is a package that contains a bunch of other packages. What, then, is a package? A package is a collection of functions that someone has written and made available online for your (free) use. An example is the <code>ggplot2</code> package, which is included in <code>tidyverse</code>. We’ll be using it later.</p>
+<section id="where-are-packages-and-how-many-are-there" class="level4" data-number="2.1.2.1">
+<h4 data-number="2.1.2.1" class="anchored" data-anchor-id="where-are-packages-and-how-many-are-there"><span class="header-section-number">2.1.2.1</span> Where are packages and how many are there?</h4>
+<p>I can answer the first question, which will reveal why an accurate answer for the second is impossible. <a href="https://cran.r-project.org/">CRAN</a> is the <strong>C</strong>omprehensive <strong>R</strong> <strong>A</strong>rchive <strong>N</strong>etwork. CRAN stores a repository of several thousand R packages. When you use the function <code>install.packages()</code>, you are dowloading packages from CRAN. However, there are also R packages that are not on CRAN.</p>
+<p>The Bioconductor project is another repository of R packages (and also just a regular project, started by R co-creator Robert Gentleman). Bioconductor stores packages for a specific purpose, and that purpose is not ours, so we can safely ignore it. Packages can be (and frequently are) stored on GitHub, or similar online repositories. The <code>devtools</code> package has the functions you need to get packages from these other repositories (i.e., <code>devtools::install_github()</code>; and also to install packages stored on your computer).</p>
+<p>Finally, there are a multitude of packages that are stored on people’s personal websites, and other non-repository internet locations. Installing (or counting) these packages is trickier than the others, but if all else fails, you can download the package from the internet and install it using <code>devtools::install_local()</code>.</p>
+</section>
+</section>
+<section id="wickhams-tidyverse" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="wickhams-tidyverse"><span class="header-section-number">2.1.3</span> Wickham’s Tidyverse</h3>
+<p>Let’s return to the <code>tidyverse</code> package, or more precisely, the packages within. They are:</p>
+<ul>
+<li><code>ggplot2</code> for data visualization</li>
+<li><code>dplyr</code> for data manipulation</li>
+<li><code>tidyr</code> for data tidying</li>
+<li><code>readr</code> for data import</li>
+<li><code>purrr</code> for functional programming</li>
+<li><code>tibble</code> for tibbles (a modern version of data frames)</li>
+<li><code>stringr</code> for string manipulation</li>
+<li><code>forcats</code> for factor manipulation</li>
+</ul>
+<p>Tidyverse also includes a number of non-core packages, such as <code>haven</code> (for importing SPSS, Stata, and SAS files), <code>lubridate</code> (for data manipulation), <code>magrittr</code> (for piping), <code>readxl</code> (for importing Excel files), <code>modelr</code> (for some, limited modeling tasks), <code>reprex</code> (for producing reproducible examples), <code>rvest</code> (for scraping web pages), and <code>xml2</code> (for reading XML files). All of these packages (all 16 of them) were written (or co-written) by Hadley Wickham. Hadley also wrote <code>blob</code>, which is not in the list because I don’t know it does. In the tidyverse, there are also two packages which Wickham did not write, those being <code>jsonlite</code> (for reading JSON files), and <code>glue</code> (not sure what this one does, either).</p>
+<p>When you run <code>library(tidyverse)</code>, as I did above, you load all eight of the core tidyverse packages. The others will not load, however. If you want to use a non-core package, you will have to load it separately or refer to it in the form <code>package::function()</code>. Let’s take an example from the <code>lubridate</code> package, which is not in the core tidyverse. <code>lubridate</code> has a function called <code>now()</code>, which returns the current date and time. Trying to use this package without loading <code>lubridate</code> is equivalent to telling R to use a function without telling it that or where it exists. If you want to use this function, you will have to load the <code>lubridate</code> package with <code>library(package)</code>, or refer to it in the form <code>package::function()</code>. Both of these methods will allow R to find locate and run the <code>now()</code> functions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># R won't throw an error if we specify that now is from the lubridate package</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>lubridate<span class="sc">::</span><span class="fu">now</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2024-05-25 09:15:42 EDT"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># we could also load lubridate and just use now normally</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">now</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2024-05-25 09:15:42 EDT"</code></pre>
+</div>
+</div>
+<p>If you wanted to unload a package (for some reason), you could use the <code>unloadNamespace()</code> function. (A namespace is just the collection of functions in the package, each of which is associated with a name, like <code>now</code> or even <code>unloadNamespace</code>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://hadley.nz/"><img src="assets/hadley.jpg" class="img-fluid figure-img" alt="Hadley Wickham"></a></p>
+<figcaption>Hadley Wickham</figcaption>
+</figure>
+</div>
+<p>This is my friend Hadley Wickham. He is a god from New Zealand. He got his bachelors in biology at the University of Auckland (which you may recall as the home university of Ross Ihaka), where he also got a masters in statistics; then, Iowa State University gave him a PhD in 2008. His <a href="http://had.co.nz/thesis/practical-tools-hadley-wickham.pdf">PhD thesis</a> was called “Practical tools for exploring data and models,” but I would probably read some of his other work (particularly <a href="https://r4ds.had.co.nz/">R for data science</a>) first/instead. He lives in Texas with his husband and dogs.</p>
+<p>Hadley is an adjunct professor at Rice University (allegedly), as well as Stanford (where he seems to have taught last in 2019 or 2020) and the University of Auckland (where he is an honorary professor). He is the chief scientist at Posit - the company that makes RStudio. Why do I worship this man? What has he done to deserve it?</p>
+<p>Hadley first stepped onto the scene with <code>ggplot2</code> (and a few others) in (and around) 2008. We’ll use <code>ggplot2</code> soon enough, but I want to explain why it’s important first. The graphical capabilities of R are quite good on their own, but using the base R functions is quite complicated. This is because the base plotting functions use a pen-on-paper approach, meaning that you have to specify each aspect on the plot individually with very few defaults. Although the base plotting functions are complicated enough for me to not know how to use them, <code>ggplot2</code> is much easier because it is based on the grammar of graphics (and because the interface Hadley designed works really well).</p>
+<p>Statisticians (and mathematicians) are really into the idea of abstraction. Other scientists use this tool, as well, but usually with much less vigor than the mathematician. She would like to talk about a graphic, but not any particular graphic. She wants to talk about the abstract idea of a graphic. What are its component parts? How do they fit together? What are the different sorts of plots and how do we tell them apart? What elements of a plot are required to communicate the information within? This sort of thing.</p>
+<p>This is the sort of questioning that leads to the grammar of graphics, which is a book by Leland Wilkinson. Wilkinson sets up a framework and an abstraction of the concept of “graphic” that is general enough to describe essentially any plot that has or will ever appear in a scientific journal.</p>
+<p>(Leland Wilkinson was an American psychologist, statistician, and computer scientist. He got a two degrees at Harvard, including a second bachelors in sacred divinity, and then received a PhD in psychology at Yale. I’m not going to say a lot about this man, but he has had a large influence on psychological statistics, to such an extent that he was the primary author of the APA’s guidelines and explanations for statistical methods in psychology journals <span class="citation" data-cites="wilkinsonStatisticalMethodsPsychology1999">(<a href="0R_references.html#ref-wilkinsonStatisticalMethodsPsychology1999" role="doc-biblioref">Wilkinson 1999</a>)</span>.)</p>
+<p>In any case, Hadley Wickham read Wilkinson’s book and built <code>ggplot2</code> according to the grammar of graphics framework (<code>gg</code> stands for grammar of graphics). This was necessary because Wilkinson’s book is not software. It addresses theoretical questions, but not practical ones - how can I actually make this plot? <code>ggplot2</code> addresses these practical questions: you make the plot with <code>ggplot2</code>. To the greatest extent possible, the plot is specified by default and in accordance with the grammar of graphics framework. The plot is still fully customizable (like the base R graphics), but unlike with the base graphics, you can produce a very fine “finished” looking plot with very little code (and most every line of code will have a single, specific, and easy-to-understand purpose).</p>
+</section>
+<section id="tidy-data" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">2.1.4</span> Tidy Data</h3>
+<p>One of Wickham’s first acts, the software package we now call <code>ggplot2</code>, was explosive, changing permanently the way the majority of R users make plots, and gaining definitively the attention of the open-source R community who were elated to make use of this new tool. As it turns out, this would be the first, not the last, time that Hadley Wickham caused such an explosion by introducing an innovative and complete technology to the community.</p>
+<p>Central to Wickham’s work, at least since 2007 with the release of the <code>reshape</code> package, has been the structure of data. There are a lot of ways that you can put the same information in a table, and it is not easy to verbally describe the ways in which these schemes are different (at least not in any generalizable, abstract way). The case here is very similar to the case with graphics. Because “data” as such is probably most important to computer scientists, they have for literal decades been proposing abstractions and definitions according to which we should understand their use of that term. In the 1960s and 1970s the new technology in this regard was the relational database, which should be to some extent familiar to anyone who has ever used the organization and note-taking app Notion, which makes heavy use of these sorts of databases. With large datasets, especially in the 70’s, using a relational structure to organize the data could speed up computation by reducing the amount of information that needs to be stored in most cases.</p>
+<p>The relational database is not super important for our purposes. All you need to know is that this is a way of storing usually large amounts of data in separate, inter-linked tables. The complexity of this scheme is relating the multiple tables to each other, and this task becomes nearly impossible if you do not have a consistent “philosophy of data” that allows you to consistently structure data and to know how it is structured without having to look at it. Using such a consistent approach to relational databases has two primary effects. First, programming is quicker because, after all of the data is correctly formatted, you save time having to look to check how individual tables are structured. Secondly, if all of the data that you’re ever going to use has to be in the same format, then you can very easily use the same code to complete the same task with different data sets. Had all of these separate data sets been formatted differently, there is nary a chance you would ever be able to reuse code, at least not without some level of modification. Computer scientists and mathematicians can further elaborate on the benefits of a “philosophy of data,” but none of the alleged benefits will ever be as important to me as is saving time.</p>
+<p>That brings us to this 2014 paper in which Wickham publishes his “philosophy of data”: <span class="citation" data-cites="wickhamTidyData2014">(<a href="0R_references.html#ref-wickhamTidyData2014" role="doc-biblioref">Wickham 2014</a>)</span>. Wickham calls this framework the <strong>tidy data framework</strong>, and it has 3 relatively simple rules. (It may be useful to note that, as with <code>ggplot2</code>, the tidy data framework and the software that uses it are based on ideas that existed before Hadley Wickham. In this case, the tidy data framework is derived from the third normal form of relational databases, as set out by Cobb, who also invented the relational database.)</p>
+<ol type="1">
+<li>Each variable must have its own column</li>
+<li>Each observation must have its own row</li>
+<li>Each value must have it’s own cell</li>
+</ol>
+<p>These three rules are from Wickham’s textbook chapter on tidy data instead of the paper (which is less accessible and older; <span class="citation" data-cites="wickhamTidyData2017">Wickham and Grolemund (<a href="0R_references.html#ref-wickhamTidyData2017" role="doc-biblioref">2017</a>)</span>). Take a look at the following examples of the same data in three different formats:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>table1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["country"],"name":[1],"type":["chr"],"align":["left"]},{"label":["year"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["cases"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["population"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"Afghanistan","2":"1999","3":"745","4":"19987071"},{"1":"Afghanistan","2":"2000","3":"2666","4":"20595360"},{"1":"Brazil","2":"1999","3":"37737","4":"172006362"},{"1":"Brazil","2":"2000","3":"80488","4":"174504898"},{"1":"China","2":"1999","3":"212258","4":"1272915272"},{"1":"China","2":"2000","3":"213766","4":"1280428583"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>table2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["country"],"name":[1],"type":["chr"],"align":["left"]},{"label":["year"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["type"],"name":[3],"type":["chr"],"align":["left"]},{"label":["count"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"Afghanistan","2":"1999","3":"cases","4":"745"},{"1":"Afghanistan","2":"1999","3":"population","4":"19987071"},{"1":"Afghanistan","2":"2000","3":"cases","4":"2666"},{"1":"Afghanistan","2":"2000","3":"population","4":"20595360"},{"1":"Brazil","2":"1999","3":"cases","4":"37737"},{"1":"Brazil","2":"1999","3":"population","4":"172006362"},{"1":"Brazil","2":"2000","3":"cases","4":"80488"},{"1":"Brazil","2":"2000","3":"population","4":"174504898"},{"1":"China","2":"1999","3":"cases","4":"212258"},{"1":"China","2":"1999","3":"population","4":"1272915272"},{"1":"China","2":"2000","3":"cases","4":"213766"},{"1":"China","2":"2000","3":"population","4":"1280428583"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>table3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["country"],"name":[1],"type":["chr"],"align":["left"]},{"label":["year"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["rate"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"Afghanistan","2":"1999","3":"745/19987071"},{"1":"Afghanistan","2":"2000","3":"2666/20595360"},{"1":"Brazil","2":"1999","3":"37737/172006362"},{"1":"Brazil","2":"2000","3":"80488/174504898"},{"1":"China","2":"1999","3":"212258/1272915272"},{"1":"China","2":"2000","3":"213766/1280428583"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>The first table is in tidy format because all the variables (country, year, cases, and population) have a column, each row is an observation of a specific country in a specific year, and each value has it’s own cell. This is how you want your data to look because this is how Hadley Wickham expects it to look. The second and third tables, by contrast, are not tidy. table2 is untidy because the type column contains two variables (cases and population) as values in cell rather than where the should be (as the names of the columns). table3 is untidy because it breaks the third rule, containing both the cases and the population in one column, separated by a “/” (the rate column). A far more ideal solution, if the rate variable is needed, would be to do something like this in which that variable has its own column.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>table1 <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">mutate</span>(<span class="at">rate =</span> cases <span class="sc">/</span> population)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["country"],"name":[1],"type":["chr"],"align":["left"]},{"label":["year"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["cases"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["population"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["rate"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Afghanistan","2":"1999","3":"745","4":"19987071","5":"0.0000372741"},{"1":"Afghanistan","2":"2000","3":"2666","4":"20595360","5":"0.0001294466"},{"1":"Brazil","2":"1999","3":"37737","4":"172006362","5":"0.0002193930"},{"1":"Brazil","2":"2000","3":"80488","4":"174504898","5":"0.0004612363"},{"1":"China","2":"1999","3":"212258","4":"1272915272","5":"0.0001667495"},{"1":"China","2":"2000","3":"213766","4":"1280428583","5":"0.0001669488"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>The tidy data framework is the one that I use, and it’s the one that I’m going to teach you. <strong>In principle, there is nothing speical about this framework.</strong> Any ol’ “philosophy of data” will do, so long as it is consistent. That is in principle. In practice, it is not the case that “any ol’ philosophy of data will do.” A large variety of the tools that we will be using were developed by Hadley Wickham. These tools are designed to work specifically with data that is in tidy format. In practice, then, it is very important that you use this framework because any other framework would require you to develop your own set of tools, which is a lot of work that Hadley Wickham has already done for you.</p>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-freesoftwarefoundationWhatFreeSoftware" class="csl-entry" role="listitem">
+Foundation, Free Software. n.d. <span>“What Is <span>Free Software</span>? - <span>GNU Project</span> - <span>Free Software Foundation</span>.”</span> Accessed May 9, 2024. <a href="https://www.gnu.org/philosophy/free-sw.html">https://www.gnu.org/philosophy/free-sw.html</a>.
+</div>
+<div id="ref-ihakaLanguageDataAnalysis1996" class="csl-entry" role="listitem">
+Ihaka, Ross, and Robert Gentleman. 1996. <span>“R: <span>A Language</span> for <span>Data Analysis</span> and <span>Graphics</span>.”</span> <em>Journal of Computational and Graphical Statistics</em> 5 (3): 299–314. <a href="https://doi.org/10.2307/1390807">https://doi.org/10.2307/1390807</a>.
+</div>
+<div id="ref-wickhamTidyData2014" class="csl-entry" role="listitem">
+Wickham, Hadley. 2014. <span>“Tidy <span>Data</span>.”</span> <em>Journal of Statistical Software</em> 59 (September): 1–23. <a href="https://doi.org/10.18637/jss.v059.i10">https://doi.org/10.18637/jss.v059.i10</a>.
+</div>
+<div id="ref-wickhamTidyData2017" class="csl-entry" role="listitem">
+Wickham, Hadley, and Garet Grolemund. 2017. <span>“Tidy <span>Data</span>.”</span> In <em>R for <span>Data Science</span></em>, 1st ed. <a href="https://r4ds.had.co.nz/tidy-data.html">https://r4ds.had.co.nz/tidy-data.html</a>.
+</div>
+<div id="ref-wilkinsonStatisticalMethodsPsychology1999" class="csl-entry" role="listitem">
+Wilkinson, Leland. 1999. <span>“Statistical <span>Methods</span> in <span>Psychology Journals</span>.”</span> <em>American Psychologist</em>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01_lore.html" class="pagination-link" aria-label="The Lore">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Lore</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03_r_101.html" class="pagination-link" aria-label="R 101">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R 101</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu"># Modern R</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="fu">## Initial Development of R (1990s)</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5"></a>In 1991, two professors in New Zealand began to develop R, a process which they documented in <span class="co">[</span><span class="ot">@ihakaLanguageDataAnalysis1996</span><span class="co">]</span>. R is very similar to S; so similar, in fact, that it is frequently called a *dialect* of S. What is the difference between S and R? The creators of R describe it as having the syntax of S (meaning that most examples, including the following example, can be run in S or R) but the semantics of Scope (which is a programming language from the Lisp family).</span>
+<span id="cb12-6"><a href="#cb12-6"></a></span>
+<span id="cb12-7"><a href="#cb12-7"></a>Probably the key difference between the two languages is the lexical scoping. Whenever you use R (or most other programming languages), you have to have something called a frame. Frames include things like functions and named variables. Each function creates its own frame. The frame for the function <span class="in">`f`</span> in the example below (from @ihakaLanguageDataAnalysis1996) contains the named variable y and the named function g. The named function g, as a function, creates its own frame (in which to store variables and functions). There is also something called a **global frame** which, in the following example, includes an assignment of the value 123 to the name <span class="in">`y`</span> and the assignment of some function to the name <span class="in">`f`</span>.</span>
+<span id="cb12-8"><a href="#cb12-8"></a></span>
+<span id="cb12-9"><a href="#cb12-9"></a>::: {#fig-r_and_s}</span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="in">```{r, code-annotations: below}</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="in">y &lt;- 123 # assign 123 to the name y #&lt;4&gt;</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="in">f &lt;- function(x) { #&lt;1&gt;</span></span>
+<span id="cb12-13"><a href="#cb12-13"></a><span class="in">  y &lt;- x * x # assign x times x to the name y #&lt;1&gt;</span></span>
+<span id="cb12-14"><a href="#cb12-14"></a><span class="in">  g &lt;- function() print(y) # create new function and new scope #&lt;2&gt;</span></span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="in">  g() # return the output of function g #&lt;1&gt;</span></span>
+<span id="cb12-16"><a href="#cb12-16"></a><span class="in">} #&lt;1&gt;</span></span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="in">f(x=10) #&lt;3&gt;</span></span>
+<span id="cb12-18"><a href="#cb12-18"></a><span class="in">```</span></span>
+<span id="cb12-19"><a href="#cb12-19"></a></span>
+<span id="cb12-20"><a href="#cb12-20"></a><span class="ss">1.  </span>the the beginning of the declaration of function <span class="in">`f`</span> (between lines 2 and 6)</span>
+<span id="cb12-21"><a href="#cb12-21"></a><span class="ss">2.  </span>the declaration of function <span class="in">`g`</span></span>
+<span id="cb12-22"><a href="#cb12-22"></a><span class="ss">3.  </span>a function call for function <span class="in">`f`</span> (with the argument <span class="in">`x`</span> set to equal 10)</span>
+<span id="cb12-23"><a href="#cb12-23"></a></span>
+<span id="cb12-24"><a href="#cb12-24"></a>an example from @ihakaLanguageDataAnalysis1996</span>
+<span id="cb12-25"><a href="#cb12-25"></a>:::</span>
+<span id="cb12-26"><a href="#cb12-26"></a></span>
+<span id="cb12-27"><a href="#cb12-27"></a>As you can see, in R, running the function <span class="in">`f`</span> with 10 as an argument results in the function returning 100 (10 times 10). In S, this very same code would have resulted in function <span class="in">`f`</span> returning the value 123. In S, when we define the function <span class="in">`g`</span>, S uses the global frame as the basis for the function, including the assignment of the value 123 to <span class="in">`y`</span>. R, by contrast, creates <span class="in">`g`</span> with a locally-scoped frame, meaning that the frame for <span class="in">`g`</span> includes the assignment of the value <span class="in">`x * x`</span> to the variable <span class="in">`y`</span> (assignments which are inherited from the **parent frame**). Thus, in S, the function <span class="in">`g`</span> is evaluated as <span class="in">`print(123)`</span>, but the R function is evaluated as <span class="in">`print(x * x)`</span> (the function <span class="in">`f`</span> is responsible for substituting <span class="in">`x`</span> to make <span class="in">`print(10 * 10)`</span>.</span>
+<span id="cb12-28"><a href="#cb12-28"></a></span>
+<span id="cb12-29"><a href="#cb12-29"></a>Unlike Scheme, but like S, R uses **lazy evaluation**. In essence, this means that R does not run your code unless it absolutely has to. I'll use the example of @fig-r_and_s to explain what this means. Lines 2 through 6 contain the declaration of function <span class="in">`f`</span> (even though line 4 also contains the declaration of function <span class="in">`g`</span>. When you run line 2, all of the lines down to line 6 (where the closing bracket, <span class="in">`}`</span> is located) get stored in R's memory next to the name <span class="in">`f`</span>. However, R will not run the function <span class="in">`f`</span> until you actually go to use it (i.e., until you make the function call in line 7). This is why we call R lazy, but what's the big deal?</span>
+<span id="cb12-30"><a href="#cb12-30"></a></span>
+<span id="cb12-31"><a href="#cb12-31"></a>If you make a syntax error in your declaration of function <span class="in">`f`</span>, R is going to have to tell you that you made a syntax error at some point. In a language that is not lazy, the language evaluates function <span class="in">`f`</span> when you store it. Thus, a non-lazy language will send you a syntax error after you run the function declaration (i.e., after you run line 2, which also causes lines 3-6 to run). If @fig-r_and_s were written in a non-lazy language, the syntax error would occur where the <span class="in">`1`</span> annotation is. However, in R, the function is merely stored when you run lines 2-6. Function <span class="in">`f`</span> does not actually run until you call it in line 7 (marked with a <span class="in">`3`</span> in @fig-r_and_s). Laziness is a feature that R inherited from S, which is also lazy.</span>
+<span id="cb12-32"><a href="#cb12-32"></a></span>
+<span id="cb12-33"><a href="#cb12-33"></a>This is getting a bit technical. The two men who developed R are Ross Ihaka and Robert Gentleman. On a family tree posted on Ihaka's personal website, he lists himself as the academic grandchild of John Tukey, then statistician at Bell Labs that popularized exploratory data analysis (the framework that created the need for S, which was also, if you'll recall developed at Bell Labs).</span>
+<span id="cb12-34"><a href="#cb12-34"></a></span>
+<span id="cb12-35"><a href="#cb12-35"></a>Ihaka is a now retired statistician from the University of Auckland. Gentleman is a bioinformatician who currently works at Harvard and 23andMe. Allegedly, Ihaka and Gentleman developped R for use in teaching statistics. That was part of both of their jobs as professors, after all. However, this doesn't seem very plausible (why would the professors write their own statistical programming languages rather than using a well-documented one which would seem to be better for pedagogy), nor have I seen any specific evidence for it. That being said, in the years 1993-94, R was stuck at the University of Auckland, being used by them, probably their peers, and less probably their students, but the software was not yet being distributed, as S or S-PLUS was.</span>
+<span id="cb12-36"><a href="#cb12-36"></a></span>
+<span id="cb12-37"><a href="#cb12-37"></a>In 1995, one of their colleagues convinced them to licence use of the software as **free software** under a GNU general public license.</span>
+<span id="cb12-38"><a href="#cb12-38"></a></span>
+<span id="cb12-39"><a href="#cb12-39"></a><span class="fu">### Free Software</span></span>
+<span id="cb12-40"><a href="#cb12-40"></a></span>
+<span id="cb12-41"><a href="#cb12-41"></a>I just bolded the term **free software**; why? As it turns out, the term **free software** has a specific definition that extends far beyond the idea of "software that you don't have to pay for." So what is free software? Free software is characterized by the four freedoms <span class="co">[</span><span class="ot">@freesoftwarefoundationWhatFreeSoftware</span><span class="co">]</span>:</span>
+<span id="cb12-42"><a href="#cb12-42"></a></span>
+<span id="cb12-43"><a href="#cb12-43"></a><span class="al">![Free Software Foundation's Four Essential Freedoms](assets/freedoms.jpg)</span></span>
+<span id="cb12-44"><a href="#cb12-44"></a></span>
+<span id="cb12-45"><a href="#cb12-45"></a>The idea of free software, and it's formation in the four freedoms seen above, came to be popular in the mid-80's after the Reagan government had made clear it's stance (and the republican, and soon the democratic, party's stance) on anti-trust enforcement. In the wake of the disruption to the computing (IBM) and telephone (AT&amp;T) industries, the Reaganites declared that we were entering into an era of free, competitive trade while setting up a regulatory framework that would allow tech companies to consolidate power and market share ad infinitum, resulting in the current big 4(-ish): Apple, Alphabet (Google), Amazon, and Meta (and Microsoft, Nvidia, and potentially Tesla and like Netflix, depending on who you ask).</span>
+<span id="cb12-46"><a href="#cb12-46"></a></span>
+<span id="cb12-47"><a href="#cb12-47"></a>It is a good thing for us, then, that none of these companies own R, which the developers have promised will remain free software indefinitely.</span>
+<span id="cb12-48"><a href="#cb12-48"></a></span>
+<span id="cb12-49"><a href="#cb12-49"></a><span class="fu">### Open Sourcing and Crowd Sourcing</span></span>
+<span id="cb12-50"><a href="#cb12-50"></a></span>
+<span id="cb12-51"><a href="#cb12-51"></a>These days, it feels like only a real purist will call R **free software**. The more en vogue term is "open source." The Free Software Foundation would like you to treat the terms as separate however (see <span class="co">[</span><span class="ot">this article</span><span class="co">](https://www.gnu.org/philosophy/open-source-misses-the-point.html)</span>).</span>
+<span id="cb12-52"><a href="#cb12-52"></a></span>
+<span id="cb12-53"><a href="#cb12-53"></a>In reality, the labels "open source" and "free software" are mostly synonymous in that they refer to many of the same software. As Freedoms 1 and 3 make clear, software must be open source before it can be free. The free software folks' biggest problem with "open source" is one of semantics, really. They claim that the "open source" movement argues too much about how free software is good for business and software development (i.e., because curious users can look for and find bugs). The free software people are not interested in these practical matters, focusing instead of the moral question of what sort of software is right and wrong. They correspondingly argue their case in the form of moral imperatives (the four freedoms).</span>
+<span id="cb12-54"><a href="#cb12-54"></a></span>
+<span id="cb12-55"><a href="#cb12-55"></a>I am less interested in these theoretical questions, and more interested in explaining to you what the implication of free or open software is bound to be (at least in the case of R): crowd-sourced development.</span>
+<span id="cb12-56"><a href="#cb12-56"></a></span>
+<span id="cb12-57"><a href="#cb12-57"></a>R itself provides you with basic statistical functionality. However, the vast majority of what is commonly called "R" is not actually part of the base distribution of R. Instead, most of the functionality is packaged within "packages," which are you load into R with the <span class="in">`library()`</span> function, as shown below:</span>
+<span id="cb12-58"><a href="#cb12-58"></a></span>
+<span id="cb12-61"><a href="#cb12-61"></a><span class="in">```{r}</span></span>
+<span id="cb12-62"><a href="#cb12-62"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-63"><a href="#cb12-63"></a><span class="in">```</span></span>
+<span id="cb12-64"><a href="#cb12-64"></a></span>
+<span id="cb12-65"><a href="#cb12-65"></a>The <span class="in">`tidyverse`</span> is really a "meta"-package (as is the <span class="in">`tidymodels`</span> package, by the way). This means that it is a package that contains a bunch of other packages. What, then, is a package? A package is a collection of functions that someone has written and made available online for your (free) use. An example is the <span class="in">`ggplot2`</span> package, which is included in <span class="in">`tidyverse`</span>. We'll be using it later.</span>
+<span id="cb12-66"><a href="#cb12-66"></a></span>
+<span id="cb12-67"><a href="#cb12-67"></a><span class="fu">#### Where are packages and how many are there?</span></span>
+<span id="cb12-68"><a href="#cb12-68"></a></span>
+<span id="cb12-69"><a href="#cb12-69"></a>I can answer the first question, which will reveal why an accurate answer for the second is impossible. <span class="co">[</span><span class="ot">CRAN</span><span class="co">](https://cran.r-project.org/)</span> is the **C**omprehensive **R** **A**rchive **N**etwork. CRAN stores a repository of several thousand R packages. When you use the function <span class="in">`install.packages()`</span>, you are dowloading packages from CRAN. However, there are also R packages that are not on CRAN.</span>
+<span id="cb12-70"><a href="#cb12-70"></a></span>
+<span id="cb12-71"><a href="#cb12-71"></a>The Bioconductor project is another repository of R packages (and also just a regular project, started by R co-creator Robert Gentleman). Bioconductor stores packages for a specific purpose, and that purpose is not ours, so we can safely ignore it. Packages can be (and frequently are) stored on GitHub, or similar online repositories. The <span class="in">`devtools`</span> package has the functions you need to get packages from these other repositories (i.e., <span class="in">`devtools::install_github()`</span>; and also to install packages stored on your computer).</span>
+<span id="cb12-72"><a href="#cb12-72"></a></span>
+<span id="cb12-73"><a href="#cb12-73"></a>Finally, there are a multitude of packages that are stored on people's personal websites, and other non-repository internet locations. Installing (or counting) these packages is trickier than the others, but if all else fails, you can download the package from the internet and install it using <span class="in">`devtools::install_local()`</span>.</span>
+<span id="cb12-74"><a href="#cb12-74"></a></span>
+<span id="cb12-75"><a href="#cb12-75"></a><span class="fu">### Wickham's Tidyverse</span></span>
+<span id="cb12-76"><a href="#cb12-76"></a></span>
+<span id="cb12-77"><a href="#cb12-77"></a>Let's return to the <span class="in">`tidyverse`</span> package, or more precisely, the packages within. They are:</span>
+<span id="cb12-78"><a href="#cb12-78"></a></span>
+<span id="cb12-79"><a href="#cb12-79"></a><span class="ss">-   </span><span class="in">`ggplot2`</span> for data visualization</span>
+<span id="cb12-80"><a href="#cb12-80"></a><span class="ss">-   </span><span class="in">`dplyr`</span> for data manipulation</span>
+<span id="cb12-81"><a href="#cb12-81"></a><span class="ss">-   </span><span class="in">`tidyr`</span> for data tidying</span>
+<span id="cb12-82"><a href="#cb12-82"></a><span class="ss">-   </span><span class="in">`readr`</span> for data import</span>
+<span id="cb12-83"><a href="#cb12-83"></a><span class="ss">-   </span><span class="in">`purrr`</span> for functional programming</span>
+<span id="cb12-84"><a href="#cb12-84"></a><span class="ss">-   </span><span class="in">`tibble`</span> for tibbles (a modern version of data frames)</span>
+<span id="cb12-85"><a href="#cb12-85"></a><span class="ss">-   </span><span class="in">`stringr`</span> for string manipulation</span>
+<span id="cb12-86"><a href="#cb12-86"></a><span class="ss">-   </span><span class="in">`forcats`</span> for factor manipulation</span>
+<span id="cb12-87"><a href="#cb12-87"></a></span>
+<span id="cb12-88"><a href="#cb12-88"></a>Tidyverse also includes a number of non-core packages, such as <span class="in">`haven`</span> (for importing SPSS, Stata, and SAS files), <span class="in">`lubridate`</span> (for data manipulation), <span class="in">`magrittr`</span> (for piping), <span class="in">`readxl`</span> (for importing Excel files), <span class="in">`modelr`</span> (for some, limited modeling tasks), <span class="in">`reprex`</span> (for producing reproducible examples), <span class="in">`rvest`</span> (for scraping web pages), and <span class="in">`xml2`</span> (for reading XML files). All of these packages (all 16 of them) were written (or co-written) by Hadley Wickham. Hadley also wrote <span class="in">`blob`</span>, which is not in the list because I don't know it does. In the tidyverse, there are also two packages which Wickham did not write, those being <span class="in">`jsonlite`</span> (for reading JSON files), and <span class="in">`glue`</span> (not sure what this one does, either).</span>
+<span id="cb12-89"><a href="#cb12-89"></a></span>
+<span id="cb12-90"><a href="#cb12-90"></a>When you run <span class="in">`library(tidyverse)`</span>, as I did above, you load all eight of the core tidyverse packages. The others will not load, however. If you want to use a non-core package, you will have to load it separately or refer to it in the form <span class="in">`package::function()`</span>. Let's take an example from the <span class="in">`lubridate`</span> package, which is not in the core tidyverse. <span class="in">`lubridate`</span> has a function called <span class="in">`now()`</span>, which returns the current date and time. Trying to use this package without loading <span class="in">`lubridate`</span> is equivalent to telling R to use a function without telling it that or where it exists. If you want to use this function, you will have to load the <span class="in">`lubridate`</span> package with <span class="in">`library(package)`</span>, or refer to it in the form <span class="in">`package::function()`</span>. Both of these methods will allow R to find locate and run the <span class="in">`now()`</span> functions.</span>
+<span id="cb12-91"><a href="#cb12-91"></a></span>
+<span id="cb12-94"><a href="#cb12-94"></a><span class="in">```{r}</span></span>
+<span id="cb12-95"><a href="#cb12-95"></a><span class="co"># R won't throw an error if we specify that now is from the lubridate package</span></span>
+<span id="cb12-96"><a href="#cb12-96"></a>lubridate<span class="sc">::</span><span class="fu">now</span>()</span>
+<span id="cb12-97"><a href="#cb12-97"></a><span class="co"># we could also load lubridate and just use now normally</span></span>
+<span id="cb12-98"><a href="#cb12-98"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb12-99"><a href="#cb12-99"></a><span class="fu">now</span>()</span>
+<span id="cb12-100"><a href="#cb12-100"></a><span class="in">```</span></span>
+<span id="cb12-101"><a href="#cb12-101"></a></span>
+<span id="cb12-102"><a href="#cb12-102"></a>If you wanted to unload a package (for some reason), you could use the <span class="in">`unloadNamespace()`</span> function. (A namespace is just the collection of functions in the package, each of which is associated with a name, like <span class="in">`now`</span> or even <span class="in">`unloadNamespace`</span>).</span>
+<span id="cb12-103"><a href="#cb12-103"></a></span>
+<span id="cb12-104"><a href="#cb12-104"></a><span class="co">[</span><span class="al">![Hadley Wickham](assets/hadley.jpg)</span><span class="co">](https://hadley.nz/)</span></span>
+<span id="cb12-105"><a href="#cb12-105"></a></span>
+<span id="cb12-106"><a href="#cb12-106"></a>This is my friend Hadley Wickham. He is a god from New Zealand. He got his bachelors in biology at the University of Auckland (which you may recall as the home university of Ross Ihaka), where he also got a masters in statistics; then, Iowa State University gave him a PhD in 2008. His <span class="co">[</span><span class="ot">PhD thesis</span><span class="co">](http://had.co.nz/thesis/practical-tools-hadley-wickham.pdf)</span> was called "Practical tools for exploring data and models," but I would probably read some of his other work (particularly <span class="co">[</span><span class="ot">R for data science</span><span class="co">](https://r4ds.had.co.nz/)</span>) first/instead. He lives in Texas with his husband and dogs.</span>
+<span id="cb12-107"><a href="#cb12-107"></a></span>
+<span id="cb12-108"><a href="#cb12-108"></a>Hadley is an adjunct professor at Rice University (allegedly), as well as Stanford (where he seems to have taught last in 2019 or 2020) and the University of Auckland (where he is an honorary professor). He is the chief scientist at Posit - the company that makes RStudio. Why do I worship this man? What has he done to deserve it?</span>
+<span id="cb12-109"><a href="#cb12-109"></a></span>
+<span id="cb12-110"><a href="#cb12-110"></a>Hadley first stepped onto the scene with <span class="in">`ggplot2`</span> (and a few others) in (and around) 2008. We'll use <span class="in">`ggplot2`</span> soon enough, but I want to explain why it's important first. The graphical capabilities of R are quite good on their own, but using the base R functions is quite complicated. This is because the base plotting functions use a pen-on-paper approach, meaning that you have to specify each aspect on the plot individually with very few defaults. Although the base plotting functions are complicated enough for me to not know how to use them, <span class="in">`ggplot2`</span> is much easier because it is based on the grammar of graphics (and because the interface Hadley designed works really well).</span>
+<span id="cb12-111"><a href="#cb12-111"></a></span>
+<span id="cb12-112"><a href="#cb12-112"></a>Statisticians (and mathematicians) are really into the idea of abstraction. Other scientists use this tool, as well, but usually with much less vigor than the mathematician. She would like to talk about a graphic, but not any particular graphic. She wants to talk about the abstract idea of a graphic. What are its component parts? How do they fit together? What are the different sorts of plots and how do we tell them apart? What elements of a plot are required to communicate the information within? This sort of thing.</span>
+<span id="cb12-113"><a href="#cb12-113"></a></span>
+<span id="cb12-114"><a href="#cb12-114"></a>This is the sort of questioning that leads to the grammar of graphics, which is a book by Leland Wilkinson. Wilkinson sets up a framework and an abstraction of the concept of "graphic" that is general enough to describe essentially any plot that has or will ever appear in a scientific journal.</span>
+<span id="cb12-115"><a href="#cb12-115"></a></span>
+<span id="cb12-116"><a href="#cb12-116"></a>(Leland Wilkinson was an American psychologist, statistician, and computer scientist. He got a two degrees at Harvard, including a second bachelors in sacred divinity, and then received a PhD in psychology at Yale. I'm not going to say a lot about this man, but he has had a large influence on psychological statistics, to such an extent that he was the primary author of the APA's guidelines and explanations for statistical methods in psychology journals <span class="co">[</span><span class="ot">@wilkinsonStatisticalMethodsPsychology1999</span><span class="co">]</span>.)</span>
+<span id="cb12-117"><a href="#cb12-117"></a></span>
+<span id="cb12-118"><a href="#cb12-118"></a>In any case, Hadley Wickham read Wilkinson's book and built <span class="in">`ggplot2`</span> according to the grammar of graphics framework (<span class="in">`gg`</span> stands for grammar of graphics). This was necessary because Wilkinson's book is not software. It addresses theoretical questions, but not practical ones - how can I actually make this plot? <span class="in">`ggplot2`</span> addresses these practical questions: you make the plot with <span class="in">`ggplot2`</span>. To the greatest extent possible, the plot is specified by default and in accordance with the grammar of graphics framework. The plot is still fully customizable (like the base R graphics), but unlike with the base graphics, you can produce a very fine "finished" looking plot with very little code (and most every line of code will have a single, specific, and easy-to-understand purpose).</span>
+<span id="cb12-119"><a href="#cb12-119"></a></span>
+<span id="cb12-120"><a href="#cb12-120"></a><span class="fu">### Tidy Data</span></span>
+<span id="cb12-121"><a href="#cb12-121"></a></span>
+<span id="cb12-122"><a href="#cb12-122"></a>One of Wickham's first acts, the software package we now call <span class="in">`ggplot2`</span>, was explosive, changing permanently the way the majority of R users make plots, and gaining definitively the attention of the open-source R community who were elated to make use of this new tool. As it turns out, this would be the first, not the last, time that Hadley Wickham caused such an explosion by introducing an innovative and complete technology to the community.</span>
+<span id="cb12-123"><a href="#cb12-123"></a></span>
+<span id="cb12-124"><a href="#cb12-124"></a>Central to Wickham's work, at least since 2007 with the release of the <span class="in">`reshape`</span> package, has been the structure of data. There are a lot of ways that you can put the same information in a table, and it is not easy to verbally describe the ways in which these schemes are different (at least not in any generalizable, abstract way). The case here is very similar to the case with graphics. Because "data" as such is probably most important to computer scientists, they have for literal decades been proposing abstractions and definitions according to which we should understand their use of that term. In the 1960s and 1970s the new technology in this regard was the relational database, which should be to some extent familiar to anyone who has ever used the organization and note-taking app Notion, which makes heavy use of these sorts of databases. With large datasets, especially in the 70's, using a relational structure to organize the data could speed up computation by reducing the amount of information that needs to be stored in most cases.</span>
+<span id="cb12-125"><a href="#cb12-125"></a></span>
+<span id="cb12-126"><a href="#cb12-126"></a>The relational database is not super important for our purposes. All you need to know is that this is a way of storing usually large amounts of data in separate, inter-linked tables. The complexity of this scheme is relating the multiple tables to each other, and this task becomes nearly impossible if you do not have a consistent "philosophy of data" that allows you to consistently structure data and to know how it is structured without having to look at it. Using such a consistent approach to relational databases has two primary effects. First, programming is quicker because, after all of the data is correctly formatted, you save time having to look to check how individual tables are structured. Secondly, if all of the data that you're ever going to use has to be in the same format, then you can very easily use the same code to complete the same task with different data sets. Had all of these separate data sets been formatted differently, there is nary a chance you would ever be able to reuse code, at least not without some level of modification. Computer scientists and mathematicians can further elaborate on the benefits of a "philosophy of data," but none of the alleged benefits will ever be as important to me as is saving time.</span>
+<span id="cb12-127"><a href="#cb12-127"></a></span>
+<span id="cb12-128"><a href="#cb12-128"></a>That brings us to this 2014 paper in which Wickham publishes his "philosophy of data": <span class="co">[</span><span class="ot">@wickhamTidyData2014</span><span class="co">]</span>. Wickham calls this framework the **tidy data framework**, and it has 3 relatively simple rules. (It may be useful to note that, as with <span class="in">`ggplot2`</span>, the tidy data framework and the software that uses it are based on ideas that existed before Hadley Wickham. In this case, the tidy data framework is derived from the third normal form of relational databases, as set out by Cobb, who also invented the relational database.)</span>
+<span id="cb12-129"><a href="#cb12-129"></a></span>
+<span id="cb12-130"><a href="#cb12-130"></a><span class="ss">1.  </span>Each variable must have its own column</span>
+<span id="cb12-131"><a href="#cb12-131"></a><span class="ss">2.  </span>Each observation must have its own row</span>
+<span id="cb12-132"><a href="#cb12-132"></a><span class="ss">3.  </span>Each value must have it's own cell</span>
+<span id="cb12-133"><a href="#cb12-133"></a></span>
+<span id="cb12-134"><a href="#cb12-134"></a>These three rules are from Wickham's textbook chapter on tidy data instead of the paper (which is less accessible and older; @wickhamTidyData2017). Take a look at the following examples of the same data in three different formats:</span>
+<span id="cb12-135"><a href="#cb12-135"></a></span>
+<span id="cb12-138"><a href="#cb12-138"></a><span class="in">```{r}</span></span>
+<span id="cb12-139"><a href="#cb12-139"></a>table1</span>
+<span id="cb12-140"><a href="#cb12-140"></a>table2</span>
+<span id="cb12-141"><a href="#cb12-141"></a>table3</span>
+<span id="cb12-142"><a href="#cb12-142"></a><span class="in">```</span></span>
+<span id="cb12-143"><a href="#cb12-143"></a></span>
+<span id="cb12-144"><a href="#cb12-144"></a>The first table is in tidy format because all the variables (country, year, cases, and population) have a column, each row is an observation of a specific country in a specific year, and each value has it's own cell. This is how you want your data to look because this is how Hadley Wickham expects it to look. The second and third tables, by contrast, are not tidy. table2 is untidy because the type column contains two variables (cases and population) as values in cell rather than where the should be (as the names of the columns). table3 is untidy because it breaks the third rule, containing both the cases and the population in one column, separated by a "/" (the rate column). A far more ideal solution, if the rate variable is needed, would be to do something like this in which that variable has its own column.</span>
+<span id="cb12-145"><a href="#cb12-145"></a></span>
+<span id="cb12-148"><a href="#cb12-148"></a><span class="in">```{r}</span></span>
+<span id="cb12-149"><a href="#cb12-149"></a>table1 <span class="sc">|&gt;</span> </span>
+<span id="cb12-150"><a href="#cb12-150"></a>  <span class="fu">mutate</span>(<span class="at">rate =</span> cases <span class="sc">/</span> population)</span>
+<span id="cb12-151"><a href="#cb12-151"></a><span class="in">```</span></span>
+<span id="cb12-152"><a href="#cb12-152"></a></span>
+<span id="cb12-153"><a href="#cb12-153"></a>The tidy data framework is the one that I use, and it's the one that I'm going to teach you. **In principle, there is nothing speical about this framework.** Any ol' "philosophy of data" will do, so long as it is consistent. That is in principle. In practice, it is not the case that "any ol' philosophy of data will do." A large variety of the tools that we will be using were developed by Hadley Wickham. These tools are designed to work specifically with data that is in tidy format. In practice, then, it is very important that you use this framework because any other framework would require you to develop your own set of tools, which is a lot of work that Hadley Wickham has already done for you.</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/huntervooys/hunterr_2024/edit/main/02_r_and_friends.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/huntervooys/hunterr_2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
